@@ -1,3 +1,14 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 :root {
   --clr-white: #ffffff;
   --clr-darkGrey: #213547;
@@ -16,14 +27,29 @@
 }
 
 body {
+  --text-clr: var(--clr-darkGrey);
+  --bg-clr: var(--clr-white);
+
   margin: 0;
   padding: 0;
-  color: var(--clr-darkGrey);
-  background-color: var(--clr-white);
+  color: var(--text-clr);
+  background-color: var(--bg-clr);
 }
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 90em;
+  margin: 0 auto;
+  padding: 0 0.25rem;
+
+  @media (min-width: 768px) {
+    padding: 0 1rem;
+    background-color: red;
+  }
 }
 
 /* @media (prefers-color-scheme: light) {
