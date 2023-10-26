@@ -1,9 +1,13 @@
-function App() {
+import Nav from './components/Nav';
+
+const App = () => {
   return (
     <>
-      <header>Header</header>
+      <header>
+        <Nav />
+      </header>
     </>
   );
-}
+};
 
 export default App;
