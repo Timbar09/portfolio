@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
       <div className="container">
-        <a href="/">
+        <a href="/" className="logo">
           Miles <span>Mosweu</span>
         </a>
       </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@100;200;300;400;500&family=Titillium+Web:wght@200;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&family=Titillium+Web:wght@200;600;900&display=swap');
 
 html {
   box-sizing: border-box;
@@ -15,14 +15,13 @@ html {
   // FONTS
   --ff-title: 'Titillium Web', sans-serif;
   --ff-body: 'Montserrat', sans-serif;
-  --ff-logo: 'Dancing Script', cursive;
 
   // COLORS
   --clr-white: #ffffff;
   --clr-darkGrey: #213547;
 
   font-family: var(--ff-body);
-  line-height: 1.5;
+  line-height: 1.4;
   font-weight: 400;
 
   /* color-scheme: light dark; */
@@ -54,10 +53,15 @@ a {
   margin: 0 auto;
   padding: 0 0.25rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: 40em) {
     padding: 0 1rem;
-    background-color: red;
   }
+}
+
+.logo {
+  font-family: var(--ff-title);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 /* @media (prefers-color-scheme: light) {
