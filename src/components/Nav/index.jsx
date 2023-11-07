@@ -5,7 +5,7 @@ const Nav = () => {
     <nav className={styles.nav}>
       <div className="container">
         <a href="/" className="logo">
-          Miles <span>Mosweu</span>
+          Miles<span> Mosweu</span>.
         </a>
       </div>
     </nav>
