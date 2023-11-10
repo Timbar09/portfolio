@@ -23,38 +23,15 @@ const socialsData = [
 const SocialList = () => {
   return (
     <ul className="social__list">
-      <li className="social__list-item">
-        <a
-          href="https://github.com/Timbar09"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Github"
-        >
-          <Github />
-        </a>
-      </li>
-
-      <li className="social__list-item">
-        <a
-          href="www.linkedin.com/in/miles-mosweu09"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Linkedin"
-        >
-          <Linkedin />
-        </a>
-      </li>
-
-      <li className="social__list-item">
-        <a
-          href="https://twitter.com/Milez09"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Twitter"
-        >
-          <Twitter />
-        </a>
-      </li>
+      {socialsData.map((social) => {
+        return (
+          <li key={social.id}>
+            <a href={social.url} target="_blank" rel="noreferrer">
+              {social.icon}
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 };
