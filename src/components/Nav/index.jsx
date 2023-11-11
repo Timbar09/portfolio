@@ -1,11 +1,11 @@
 import Logo from '../globals/Logo';
 import SocialList from '../globals/SocialList';
 
-import styles from './index.module.scss';
+import './index.scss';
 
 const Nav = () => {
   return (
-    <nav className={styles.nav}>
+    <nav className="nav">
       <div className="container">
         <Logo />
         <SocialList />
