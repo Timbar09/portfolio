@@ -1,11 +1,17 @@
+import { Outlet, useLocation } from 'react-router-dom';
+
 import Nav from './components/Nav';
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <>
-      <header>
-        <Nav />
-      </header>
+      <header>{location.pathname !== '/' && <Nav />}</header>
+
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 };

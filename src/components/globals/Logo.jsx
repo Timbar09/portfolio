@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 const Logo = () => {
   return (
-    <a href="/" className="logo">
+    <Link to="/" className="logo">
       Miles<span> Mosweu</span>.
-    </a>
+    </Link>
   );
 };
 
