@@ -10,24 +10,24 @@ import photo from '../../assets/self.JPG';
 const Nav = () => {
   return (
     <nav className="nav">
-      <div className="container">
+      <div className="container flex flex-col">
         <Logo />
 
-        <div className="nav__profile">
-          <ul className="nav__links">
-            <li className="nav__links--item">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="nav__links--item">
-              <Link to="/page2">Page 2</Link>
-            </li>
-            <li className="nav__links--item">
-              <Link to="/page3">Page 3</Link>
-            </li>
-          </ul>
-          <img src={photo} alt="profile" className="nav__profile--photo" />
-          <SocialList />
-        </div>
+        <img src={photo} alt="profile" className="nav__profile--photo" />
+
+        <ul className="nav__links">
+          <li className="nav__links--item">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="nav__links--item">
+            <Link to="/page2">Page 2</Link>
+          </li>
+          <li className="nav__links--item">
+            <Link to="/page3">Page 3</Link>
+          </li>
+        </ul>
+
+        <SocialList />
       </div>
     </nav>
   );
