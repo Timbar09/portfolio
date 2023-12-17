@@ -6,13 +6,13 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <>
+    <div className="app">
       <header>{location.pathname !== '/' && <Nav />}</header>
 
       <main>
         <Outlet />
       </main>
-    </>
+    </div>
   );
 };
 

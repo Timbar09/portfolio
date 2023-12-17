@@ -53,6 +53,11 @@ body {
     margin: 0;
   }
 
+  .app {
+    min-height: 100vh;
+    display: flex;
+  }
+
   .container {
     max-width: 90em;
     margin: 0 auto;
