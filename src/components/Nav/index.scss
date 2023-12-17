@@ -1,5 +1,8 @@
 .nav {
   border: solid 1px #ccc;
+  height: 100%;
+  display: grid;
+  align-items: center;
 
   &__profile {
     display: flex;

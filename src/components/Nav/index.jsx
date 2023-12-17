@@ -27,7 +27,7 @@ const Nav = () => {
           </li>
         </ul>
 
-        <SocialList />
+        <SocialList className="flex flex-col" />
       </div>
     </nav>
   );
