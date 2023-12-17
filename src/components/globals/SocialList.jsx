@@ -22,9 +22,9 @@ const socialsData = [
   },
 ];
 
-const SocialList = () => {
+const SocialList = ({ className }) => {
   return (
-    <ul className="social__list">
+    <ul className={`social__list ${className ? className : ''}`}>
       {socialsData.map((social) => {
         return (
           <li key={social.id} className="social__list--item">
