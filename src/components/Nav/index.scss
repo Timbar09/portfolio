@@ -1,8 +1,14 @@
+@use '../../assets/stylesheets/util/' as *;
+
 .nav {
   border: solid 1px #ccc;
   height: 100%;
   display: grid;
   align-items: center;
+
+  @include breakpoint-down('sm') {
+    display: none;
+  }
 
   &__profile {
     display: flex;

@@ -1,0 +1,7 @@
+@use '../../assets/stylesheets/util/' as *;
+
+.menu {
+  @include breakpoint-up('md') {
+    display: none;
+  }
+}
