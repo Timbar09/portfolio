@@ -18,7 +18,7 @@ const MobileMenu = () => {
       </div>
 
       <div className="menu__social py-1">
-        <SocialList className="flex gap-1" />
+        <SocialList className="social-lg flex gap-2" />
       </div>
 
       <div className="menu__separator" />

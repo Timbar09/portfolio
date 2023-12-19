@@ -1,16 +1,28 @@
 .social {
   &__list {
-    a {
-      display: grid;
-    }
-
     &--item {
-      font-size: 1.25rem;
-      transition: scale 150ms ease-in-out;
+      a {
+        display: grid;
+        transition: color 100ms ease-in-out;
 
-      &:hover {
-        scale: 1.05;
+        &:hover,
+        &:focus {
+          color: var(--primary-100);
+        }
       }
     }
+  }
+
+  // Icon sizes
+  &-sm {
+    font-size: 1.25rem;
+  }
+
+  &-md {
+    font-size: 1.5rem;
+  }
+
+  &-lg {
+    font-size: 2rem;
   }
 }
