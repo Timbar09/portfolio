@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { IoClose as CloseMenuIcon } from 'react-icons/io5';
 
 import SocialList from '../globals/SocialList';
 
@@ -7,6 +8,11 @@ import './index.scss';
 const MobileMenu = () => {
   return (
     <nav className="menu">
+      <div className="menu__button">
+        <button type="button" className="menu__button--close">
+          <CloseMenuIcon />
+        </button>
+      </div>
       <div className="menu__social">
         <SocialList className="flex gap-1" />
       </div>

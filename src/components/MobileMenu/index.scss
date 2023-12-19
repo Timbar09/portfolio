@@ -4,4 +4,20 @@
   @include breakpoint-up('md') {
     display: none;
   }
+
+  &__button {
+    button {
+      display: grid;
+      margin-left: auto;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      border-radius: 0.15rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
 }
