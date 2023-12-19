@@ -2,18 +2,22 @@ import { Link } from 'react-router-dom';
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
 
 import SocialList from '../globals/SocialList';
+import Logo from '../globals/Logo';
 
 import './index.scss';
 
 const MobileMenu = () => {
   return (
     <nav className="menu p-2">
-      <div className="menu__button">
+      <div className="menu__button flex flex-jc-sb">
+        <Logo />
+
         <button type="button" className="menu__button--close grid grid-pi-c">
           <CloseMenuIcon />
         </button>
       </div>
-      <div className="menu__social">
+
+      <div className="menu__social py-1">
         <SocialList className="flex gap-1" />
       </div>
 
