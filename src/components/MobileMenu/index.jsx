@@ -9,7 +9,7 @@ const MobileMenu = () => {
   return (
     <nav className="menu p-2">
       <div className="menu__button">
-        <button type="button" className="menu__button--close">
+        <button type="button" className="menu__button--close grid grid-pi-c">
           <CloseMenuIcon />
         </button>
       </div>
