@@ -8,7 +8,7 @@ const MobileMenu = () => {
   return (
     <nav className="menu">
       <div className="menu__social">
-        <SocialList />
+        <SocialList className="flex gap-1" />
       </div>
 
       <div className="menu__separator" />
