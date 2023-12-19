@@ -15,8 +15,13 @@ const MobileMenu = () => {
 
       <ul className="menu__list">
         <li className="menu__item">
+          <Link to="/">Home</Link>
+        </li>
+
+        <li className="menu__item">
           <Link to="/page2">Page 2</Link>
         </li>
+
         <li className="menu__item">
           <Link to="/page3">Page 3</Link>
         </li>
