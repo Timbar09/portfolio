@@ -7,7 +7,7 @@ import './index.scss';
 
 const MobileMenu = () => {
   return (
-    <nav className="menu">
+    <nav className="menu p-2">
       <div className="menu__button">
         <button type="button" className="menu__button--close">
           <CloseMenuIcon />
