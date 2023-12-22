@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import MobileMenu from './components/MobileMenu';
+import MobileMenuButton from './components/MobileMenu/MobileMenuButton';
 
 const App = () => {
   const location = useLocation();
@@ -9,8 +10,9 @@ const App = () => {
   return (
     <div className="app">
       <header>
-        {location.pathname !== '/' && <Nav />}
+        <MobileMenuButton />
 
+        {location.pathname !== '/' && <Nav />}
         <MobileMenu />
       </header>
 
