@@ -9,12 +9,9 @@ const App = () => {
   return (
     <div className="app">
       <header>
-        {location.pathname !== '/' && (
-          <>
-            <Nav />
-            <MobileMenu />
-          </>
-        )}
+        {location.pathname !== '/' && <Nav />}
+
+        <MobileMenu />
       </header>
 
       <main>
