@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
 import { RiHome3Line as HomeIcon } from 'react-icons/ri';
 import { RiUser3Line as AboutMeIcon } from 'react-icons/ri';
@@ -10,6 +11,39 @@ import SocialList from '../globals/SocialList';
 import Logo from '../globals/Logo';
 
 import './index.scss';
+
+const menuItems = [
+  {
+    id: 1,
+    icon: <HomeIcon />,
+    name: 'Home',
+    url: '/',
+  },
+  {
+    id: 2,
+    icon: <AboutMeIcon />,
+    name: 'About Me',
+    url: '/about',
+  },
+  {
+    id: 3,
+    icon: <ProjectsIcon />,
+    name: 'Projects',
+    url: '/projects',
+  },
+  {
+    id: 4,
+    icon: <CapabilitiesIcon />,
+    name: 'Capabilities',
+    url: '/capabilities',
+  },
+  {
+    id: 5,
+    icon: <ContactIcon />,
+    name: 'Contact',
+    url: '/contact',
+  },
+];
 
 const MobileMenu = () => {
   return (
@@ -29,40 +63,16 @@ const MobileMenu = () => {
       <div className="menu__separator" />
 
       <ul className="menu__list">
-        <li className="menu__item">
-          <Link to="/" className="flex flex-ai-c gap-1 p-1">
-            <HomeIcon />
-            Home
-          </Link>
-        </li>
-
-        <li className="menu__item">
-          <Link to="/page2">
-            <AboutMeIcon />
-            About Me
-          </Link>
-        </li>
-
-        <li className="menu__item">
-          <Link to="/page3">
-            <ProjectsIcon />
-            Projects
-          </Link>
-        </li>
-
-        <li className="menu__item">
-          <Link to="/page4">
-            <CapabilitiesIcon />
-            Capabilities
-          </Link>
-        </li>
-
-        <li className="menu__item">
-          <Link to="/page5">
-            <ContactIcon />
-            Contact
-          </Link>
-        </li>
+        {menuItems.map((item) => {
+          return (
+            <li key={item.id} className="menu__item">
+              <Link to={item.url} className="flex flex-ai-c gap-1 p-1">
+                {item.icon}
+                {item.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
