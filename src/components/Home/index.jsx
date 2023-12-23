@@ -12,10 +12,16 @@ const Home = () => {
           </p>
         </li>
         <li className="home__links--item">
-          <Link to="/page2">Page 2</Link>
+          <Link to="/about">About Me Page</Link>
         </li>
         <li className="home__links--item">
-          <Link to="/page3">Page 3</Link>
+          <Link to="/projects">Projects Page</Link>
+        </li>
+        <li className="home__links--item">
+          <Link to="/capabilities">Capabilities Page</Link>
+        </li>
+        <li className="home__links--item">
+          <Link to="/contact">Contact Page</Link>
         </li>
       </ul>
     </div>
