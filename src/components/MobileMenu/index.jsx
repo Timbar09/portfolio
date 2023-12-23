@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
@@ -45,13 +46,17 @@ const menuItems = [
   },
 ];
 
-const MobileMenu = () => {
+const MobileMenu = ({ handleClick }) => {
   return (
-    <nav className="menu p-2">
+    <nav className="menu p-3">
       <div className="menu__button flex flex-jc-sb">
         <Logo />
 
-        <button type="button" className="menu__button--close grid grid-pi-c">
+        <button
+          type="button"
+          className="menu__button--close grid grid-pi-c"
+          onClick={handleClick}
+        >
           <CloseMenuIcon />
         </button>
       </div>
@@ -76,6 +81,10 @@ const MobileMenu = () => {
       </ul>
     </nav>
   );
+};
+
+MobileMenu.propTypes = {
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default MobileMenu;
