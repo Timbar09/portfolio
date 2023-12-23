@@ -9,7 +9,34 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+
+    if (isMenuOpen) {
+      // Add open class to menu and remove closed class
+      document.querySelector('.menu').classList.remove('open');
+      document.querySelector('.menu').classList.add('closed');
+
+      // Add disappear class to menu__button--open parent div and remove appear class
+      document
+        .querySelector('.menu__button--open')
+        .parentElement.classList.add('appear');
+      document
+        .querySelector('.menu__button--open')
+        .parentElement.classList.remove('disappear');
+    } else {
+      document.querySelector('.menu').classList.remove('closed');
+      document.querySelector('.menu').classList.add('open');
+
+      // Add appear class to menu__button--open and remove disappear class
+      document
+        .querySelector('.menu__button--open')
+        .parentElement.classList.add('disappear');
+      document
+        .querySelector('.menu__button--open')
+        .parentElement.classList.remove('appear');
+    }
+  };
 
   return (
     <div className="app">
@@ -17,7 +44,7 @@ const App = () => {
         <MobileMenuButton handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
 
         {location.pathname !== '/' && <Nav />}
-        {isMenuOpen && <MobileMenu handleClick={toggleMenu} />}
+        <MobileMenu handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
       </header>
 
       <main>
