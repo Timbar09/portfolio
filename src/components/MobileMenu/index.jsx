@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -47,8 +48,24 @@ const menuItems = [
 ];
 
 const MobileMenu = ({ handleClick, isMenuOpen }) => {
+  const menuRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        handleClick();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [handleClick]);
+
   return (
-    <nav className="menu p-3">
+    <nav className="menu p-3" ref={menuRef}>
       <div className="menu__button flex flex-jc-sb">
         <Logo />
 
@@ -73,7 +90,11 @@ const MobileMenu = ({ handleClick, isMenuOpen }) => {
         {menuItems.map((item) => {
           return (
             <li key={item.id} className="menu__item">
-              <Link to={item.url} className="flex flex-ai-c gap-1 p-1">
+              <Link
+                to={item.url}
+                className="flex flex-ai-c gap-1 p-1"
+                onClick={handleClick}
+              >
                 {item.icon}
                 {item.name}
               </Link>

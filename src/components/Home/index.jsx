@@ -6,6 +6,7 @@ const Home = () => {
       <ul className="home__links">
         <li className="home__intro">
           <h1>Miles Mosweu</h1>
+
           <p>
             This is the home page intro section. It is a good place to explain
             what the site is about and what the user can expect to find here.
