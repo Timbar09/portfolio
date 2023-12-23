@@ -72,3 +72,28 @@
     right: -5rem;
   }
 }
+
+// ROLL RIGHT AND LEFT
+@keyframes roll-left {
+  0% {
+    rotate: 0;
+    translate: 2.5rem 0;
+  }
+
+  100% {
+    rotate: -360deg;
+    translate: 0 0;
+  }
+}
+
+@keyframes roll-right {
+  0% {
+    rotate: 0;
+    translate: 0 0;
+  }
+
+  100% {
+    rotate: 360deg;
+    translate: -2.5rem 0;
+  }
+}

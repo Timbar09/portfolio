@@ -46,7 +46,7 @@ const menuItems = [
   },
 ];
 
-const MobileMenu = ({ handleClick }) => {
+const MobileMenu = ({ handleClick, isMenuOpen }) => {
   return (
     <nav className="menu p-3">
       <div className="menu__button flex flex-jc-sb">
@@ -54,7 +54,9 @@ const MobileMenu = ({ handleClick }) => {
 
         <button
           type="button"
-          className="menu__button--close grid grid-pi-c"
+          className={`menu__button--close grid grid-pi-c ${
+            isMenuOpen ? 'roll-left' : 'roll-right'
+          }`}
           onClick={handleClick}
         >
           <CloseMenuIcon />
@@ -85,6 +87,7 @@ const MobileMenu = ({ handleClick }) => {
 
 MobileMenu.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default MobileMenu;
