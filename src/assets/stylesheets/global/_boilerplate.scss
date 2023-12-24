@@ -28,20 +28,6 @@ body {
     width: min(100% - 2rem, 90em);
     margin-inline: auto;
   }
-
-  .logo {
-    font-family: $ff-title;
-    font-size: 1.5rem;
-    font-weight: 600;
-
-    span {
-      display: none;
-
-      @include breakpoint-up('sm') {
-        display: inline;
-      }
-    }
-  }
 }
 
 /* @media (prefers-color-scheme: light) {
