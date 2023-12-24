@@ -25,13 +25,8 @@ body {
   }
 
   .container {
-    max-width: 90em;
-    margin: 0 auto;
-    padding: 0 0.25rem;
-
-    @media (min-width: 40em) {
-      padding: 0 1rem;
-    }
+    width: min(100% - 2rem, 90em);
+    margin-inline: auto;
   }
 
   .logo {
@@ -42,7 +37,7 @@ body {
     span {
       display: none;
 
-      @media (min-width: 40em) {
+      @include breakpoint-up('sm') {
         display: inline;
       }
     }
