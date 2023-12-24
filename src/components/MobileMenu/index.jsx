@@ -52,7 +52,11 @@ const MobileMenu = ({ handleClick, isMenuOpen }) => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        isMenuOpen
+      ) {
         handleClick();
       }
     };
@@ -62,7 +66,7 @@ const MobileMenu = ({ handleClick, isMenuOpen }) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [handleClick]);
+  }, [handleClick, isMenuOpen]);
 
   return (
     <nav className="menu p-3" ref={menuRef}>
