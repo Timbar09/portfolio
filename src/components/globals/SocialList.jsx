@@ -24,10 +24,12 @@ const socialsData = [
   },
 ];
 
-const SocialList = ({ className }) => {
+const SocialList = ({ className = '', isNavExpanded }) => {
+  const dataToShow = isNavExpanded ? socialsData : socialsData.slice(0, 1);
+
   return (
-    <ul className={`social__list ${className ? className : ''}`}>
-      {socialsData.map((social) => {
+    <ul className={`social__list ${className} ${isNavExpanded ? '' : 'px-1'}`}>
+      {dataToShow.map((social) => {
         return (
           <li key={social.id} className="social__list--item">
             <a href={social.url} target="_blank" rel="noreferrer">
@@ -42,6 +44,7 @@ const SocialList = ({ className }) => {
 
 SocialList.propTypes = {
   className: PropTypes.string,
+  isNavExpanded: PropTypes.bool,
 };
 
 export default SocialList;

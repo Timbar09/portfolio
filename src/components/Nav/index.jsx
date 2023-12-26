@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -48,6 +48,7 @@ const menuItems = [
 ];
 
 const Nav = ({ handleClick, isMenuOpen }) => {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   const menuRef = useRef();
 
   useEffect(() => {
@@ -85,7 +86,10 @@ const Nav = ({ handleClick, isMenuOpen }) => {
       </div>
 
       <div className="nav__social py-1">
-        <SocialList className="social-lg flex gap-2" />
+        <SocialList
+          className="social-lg flex gap-2"
+          isNavExpanded={isNavExpanded}
+        />
       </div>
 
       <div className="nav__separator" />
@@ -100,7 +104,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
                 onClick={handleClick}
               >
                 {item.icon}
-                {item.name}
+                {isNavExpanded && item.name}
               </Link>
             </li>
           );
