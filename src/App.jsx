@@ -20,10 +20,10 @@ const App = () => {
       // Add disappear class to menu__button--open parent div and remove appear class
       document
         .querySelector('.menu__button--open')
-        .parentElement.classList.add('appear');
+        .parentElement.classList.add('active');
       document
         .querySelector('.menu__button--open')
-        .parentElement.classList.remove('disappear');
+        .parentElement.classList.remove('inactive');
     } else {
       document.querySelector('.menu').classList.remove('closed');
       document.querySelector('.menu').classList.add('open');
@@ -31,10 +31,10 @@ const App = () => {
       // Add appear class to menu__button--open and remove disappear class
       document
         .querySelector('.menu__button--open')
-        .parentElement.classList.add('disappear');
+        .parentElement.classList.add('inactive');
       document
         .querySelector('.menu__button--open')
-        .parentElement.classList.remove('appear');
+        .parentElement.classList.remove('active');
     }
   };
 

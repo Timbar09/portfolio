@@ -40,11 +40,11 @@
       }
     }
 
-    &.appear {
+    &.active {
       animation: appear 500ms ease-in-out forwards;
     }
 
-    &.disappear {
+    &.inactive {
       animation: disappear 500ms ease-in-out forwards;
     }
 
