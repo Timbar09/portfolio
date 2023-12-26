@@ -70,24 +70,26 @@ const Nav = ({ handleClick, isMenuOpen }) => {
   }, [handleClick, isMenuOpen]);
 
   return (
-    <nav className="nav p-3" ref={menuRef}>
-      <div className="nav__button flex flex-jc-sb">
-        <Logo />
+    <nav className="nav p-3 p_md-2" ref={menuRef}>
+      <div className="nav__button nav__header flex flex-jc-sb">
+        {isNavExpanded && <Logo />}
 
-        <button
-          type="button"
-          className={`nav__close-menu grid grid-pi-c ${
-            isMenuOpen ? 'roll-left' : 'roll-right'
-          }`}
-          onClick={handleClick}
-        >
-          <CloseMenuIcon />
-        </button>
+        {isNavExpanded && (
+          <button
+            type="button"
+            className={`nav__close-menu grid grid-pi-c ${
+              isMenuOpen ? 'roll-left' : 'roll-right'
+            }`}
+            onClick={handleClick}
+          >
+            <CloseMenuIcon />
+          </button>
+        )}
       </div>
 
       <div className="nav__social py-1">
         <SocialList
-          className="social-lg flex gap-2"
+          className="social-lg flex flex-jc-c gap-2"
           isNavExpanded={isNavExpanded}
         />
       </div>

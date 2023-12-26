@@ -1,3 +1,5 @@
+@use '../util/' as *;
+
 .p {
   &-0 {
     padding: 0;
@@ -13,6 +15,58 @@
 
   &-3 {
     padding: 1.75rem;
+  }
+
+  &_md {
+    &-0 {
+      @include breakpoint-up('md') {
+        padding: 0;
+      }
+    }
+
+    &-1 {
+      @include breakpoint-up('md') {
+        padding: 0.5rem;
+      }
+    }
+
+    &-2 {
+      @include breakpoint-up('md') {
+        padding: 1rem;
+      }
+    }
+
+    &-3 {
+      @include breakpoint-up('md') {
+        padding: 1.75rem;
+      }
+    }
+  }
+
+  &_lg {
+    &-0 {
+      @include breakpoint-up('lg') {
+        padding: 0;
+      }
+    }
+
+    &-1 {
+      @include breakpoint-up('lg') {
+        padding: 0.5rem;
+      }
+    }
+
+    &-2 {
+      @include breakpoint-up('lg') {
+        padding: 1rem;
+      }
+    }
+
+    &-3 {
+      @include breakpoint-up('lg') {
+        padding: 1.75rem;
+      }
+    }
   }
 
   &x {
@@ -35,6 +89,66 @@
       padding-left: 1.75rem;
       padding-right: 1.75rem;
     }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up('md') {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('md') {
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('md') {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('md') {
+          padding-left: 1.75rem;
+          padding-right: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up('lg') {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('lg') {
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('lg') {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('lg') {
+          padding-left: 1.75rem;
+          padding-right: 1.75rem;
+        }
+      }
+    }
   }
 
   &y {
@@ -56,6 +170,66 @@
     &-3 {
       padding-top: 1.75rem;
       padding-bottom: 1.75rem;
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up('md') {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('md') {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('md') {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('md') {
+          padding-top: 1.75rem;
+          padding-bottom: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up('lg') {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('lg') {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('lg') {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('lg') {
+          padding-top: 1.75rem;
+          padding-bottom: 1.75rem;
+        }
+      }
     }
   }
 }
