@@ -17,6 +17,11 @@ const App = () => {
       document.querySelector('.menu').classList.remove('open');
       document.querySelector('.menu').classList.add('closed');
 
+      setTimeout(() => {
+        // Remove closed class from menu
+        document.querySelector('.menu').classList.remove('closed');
+      }, 500);
+
       // Add disappear class to menu__button--open parent div and remove appear class
       document
         .querySelector('.menu__button--open')

@@ -41,11 +41,13 @@
     }
 
     &.active {
-      animation: appear 500ms ease-in-out forwards;
+      animation: appear 500ms ease-in-out forwards,
+        move-left 500ms ease-in-out forwards;
     }
 
     &.inactive {
-      animation: disappear 500ms ease-in-out forwards;
+      animation: disappear 500ms ease-in-out forwards,
+        move-right 500ms ease-in-out forwards;
     }
 
     button {
