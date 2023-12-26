@@ -1,22 +1,129 @@
 @use '../../assets/stylesheets/util/' as *;
-
 .nav {
-  border: solid 1px #ccc;
-  height: 100%;
-  display: grid;
-  align-items: center;
+  --bg-menu: var(--text-100);
+  --text: var(--bg-100);
 
-  @include breakpoint-down('sm') {
-    display: none;
+  position: fixed;
+  inset: 0 -5rem auto auto;
+  height: 100vh;
+  width: 75%;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  color: var(--text);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  visibility: hidden;
+
+  @include breakpoint-up('md') {
+    position: relative;
+    inset: auto;
+    height: auto;
+    width: auto;
+    box-shadow: none;
+    visibility: visible;
   }
 
-  &__profile {
-    display: flex;
+  &.open {
+    animation: slide-in 500ms ease-in-out forwards;
+  }
 
-    &--photo {
-      width: 50px;
-      height: 50px;
+  &.closed {
+    animation: slide-out 500ms ease-in-out forwards;
+  }
+
+  &__button {
+    --dimension: 2.25rem;
+    --font-size: 1.75rem;
+
+    button {
+      position: relative;
+      width: var(--dimension);
+      height: var(--dimension);
+      font-size: var(--font-size);
       border-radius: 50%;
+      color: var(--text);
+      transition: background-color 100ms ease-in-out;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    @include breakpoint-up('md') {
+      display: none;
+    }
+
+    &.active {
+      animation: appear 500ms ease-in-out forwards,
+        move-left 500ms ease-in-out forwards;
+    }
+
+    &.inactive {
+      animation: disappear 500ms ease-in-out forwards,
+        move-right 500ms ease-in-out forwards;
+    }
+  }
+
+  &__hamburger {
+    --dimension: 3.5rem;
+    --font-size: 2.5rem;
+
+    margin-left: auto;
+  }
+
+  &__close-menu {
+    translate: 1.5rem 0;
+
+    &.roll-left {
+      animation: roll-left 600ms ease-in-out forwards;
+    }
+
+    &.roll-right {
+      animation: roll-right 700ms ease-in-out forwards;
+    }
+  }
+
+  &__separator {
+    height: 2px;
+    width: 100%;
+    border-radius: 5rem;
+    background-color: var(--text);
+    opacity: 0.2;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    position: relative;
+
+    a {
+      width: 100%;
+      border-radius: 0.25rem;
+      transition: background-color 100ms ease-in-out;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0.25rem;
+        border-radius: 0.25rem 0 0 0.25rem;
+        background: linear-gradient(
+          45deg,
+          var(--primary-100),
+          var(--primary-300)
+        );
+        opacity: 0;
+        transition: opacity 100ms ease-in-out;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+
+        &::before {
+          opacity: 0.85;
+        }
+      }
     }
   }
 }

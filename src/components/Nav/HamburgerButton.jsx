@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import { HiMenuAlt4 as MenuIcon } from 'react-icons/hi';
 
-import './index.scss';
+// import './index.scss';
 
-const MobileMenuButton = ({ handleClick }) => {
+const HamburgerButton = ({ handleClick }) => {
   return (
-    <div className="menu__button remove-button-for-desktop">
+    <div className="nav__button">
       <button
         type="button"
-        className="menu__button--open grid grid-pi-c"
+        className="nav__hamburger grid grid-pi-c"
         onClick={handleClick}
       >
         <MenuIcon />
@@ -17,8 +17,8 @@ const MobileMenuButton = ({ handleClick }) => {
   );
 };
 
-MobileMenuButton.propTypes = {
+HamburgerButton.propTypes = {
   handleClick: PropTypes.func.isRequired,
 };
 
-export default MobileMenuButton;
+export default HamburgerButton;

@@ -1,9 +1,26 @@
+@use '../util/' as *;
+
 .grid {
   display: grid;
 
   &-pi {
     &-c {
       place-items: center;
+    }
+  }
+
+  // Breakpoints
+  &_sm {
+    @include breakpoint-up('md') {
+      display: grid;
+    }
+
+    &-pi {
+      &-c {
+        @include breakpoint-up('md') {
+          place-items: center;
+        }
+      }
     }
   }
 }
