@@ -85,7 +85,9 @@ const Nav = ({ handleClick, isMenuOpen }) => {
                 onClick={handleClick}
               >
                 {item.icon}
-                {isNavExpanded && item.name}
+                {isNavExpanded && (
+                  <span className="nav__item--text">{item.name}</span>
+                )}
               </Link>
             </li>
           );

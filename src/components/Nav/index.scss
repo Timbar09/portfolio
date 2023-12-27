@@ -145,5 +145,11 @@
         }
       }
     }
+
+    &--text {
+      @include breakpoint-up('md') {
+        font-size: 1.25rem;
+      }
+    }
   }
 }
