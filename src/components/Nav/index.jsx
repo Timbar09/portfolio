@@ -3,49 +3,12 @@ import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
-import { RiHome3Line as HomeIcon } from 'react-icons/ri';
-import { RiUser3Line as AboutMeIcon } from 'react-icons/ri';
-import { RiFileList2Line as ProjectsIcon } from 'react-icons/ri';
-import { VscTools as CapabilitiesIcon } from 'react-icons/vsc';
-import { RiKakaoTalkLine as ContactIcon } from 'react-icons/ri';
 
 import SocialList from '../globals/SocialList';
 import Logo from '../globals/Logo';
+import { menuItems } from './menuItems';
 
 import './index.scss';
-
-const menuItems = [
-  {
-    id: 1,
-    icon: <HomeIcon />,
-    name: 'Home',
-    url: '/',
-  },
-  {
-    id: 2,
-    icon: <AboutMeIcon />,
-    name: 'About Me',
-    url: '/about',
-  },
-  {
-    id: 3,
-    icon: <ProjectsIcon />,
-    name: 'Projects',
-    url: '/projects',
-  },
-  {
-    id: 4,
-    icon: <CapabilitiesIcon />,
-    name: 'Capabilities',
-    url: '/capabilities',
-  },
-  {
-    id: 5,
-    icon: <ContactIcon />,
-    name: 'Contact',
-    url: '/contact',
-  },
-];
 
 const Nav = ({ handleClick, isMenuOpen }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
