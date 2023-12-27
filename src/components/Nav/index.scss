@@ -31,6 +31,12 @@
     animation: slide-out 500ms ease-in-out forwards;
   }
 
+  &__logo {
+    @include breakpoint-up('md') {
+      display: none;
+    }
+  }
+
   &__button {
     --dimension: 2.25rem;
     --font-size: 1.75rem;

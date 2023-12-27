@@ -44,19 +44,23 @@ const Nav = ({ handleClick, isMenuOpen }) => {
       onMouseEnter={handleNavExpand}
       onMouseLeave={handleNavExpand}
     >
-      <div className="nav__button nav__header flex flex-jc-sb">
-        {isNavExpanded && <Logo />}
+      <div className="nav__header flex flex-jc-sb">
+        <div className="nav__logo">
+          <Logo />
+        </div>
 
         {isNavExpanded && (
-          <button
-            type="button"
-            className={`nav__close-menu grid grid-pi-c ${
-              isMenuOpen ? 'roll-left' : 'roll-right'
-            }`}
-            onClick={handleClick}
-          >
-            <CloseMenuIcon />
-          </button>
+          <div className="nav__button">
+            <button
+              type="button"
+              className={`nav__close-menu grid grid-pi-c ${
+                isMenuOpen ? 'roll-left' : 'roll-right'
+              }`}
+              onClick={handleClick}
+            >
+              <CloseMenuIcon />
+            </button>
+          </div>
         )}
       </div>
 
