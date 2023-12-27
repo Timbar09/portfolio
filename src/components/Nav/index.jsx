@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
 import { RiHome3Line as HomeIcon } from 'react-icons/ri';
@@ -49,6 +49,7 @@ const menuItems = [
 
 const Nav = ({ handleClick, isMenuOpen }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const location = useLocation();
   const menuRef = useRef();
 
   useEffect(() => {
@@ -102,7 +103,9 @@ const Nav = ({ handleClick, isMenuOpen }) => {
             <li key={item.id} className="nav__item">
               <Link
                 to={item.url}
-                className="flex flex-ai-c gap-1 p-1"
+                className={`flex flex-ai-c gap-1 p-1 ${
+                  location.pathname === item.url ? 'active' : ''
+                }`}
                 onClick={handleClick}
               >
                 {item.icon}
