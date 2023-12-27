@@ -52,6 +52,10 @@ const Nav = ({ handleClick, isMenuOpen }) => {
   const location = useLocation();
   const menuRef = useRef();
 
+  const handleNavExpand = () => {
+    setIsNavExpanded(!isNavExpanded);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -71,7 +75,12 @@ const Nav = ({ handleClick, isMenuOpen }) => {
   }, [handleClick, isMenuOpen]);
 
   return (
-    <nav className="nav p-3 p_md-2" ref={menuRef}>
+    <nav
+      className="nav p-3 p_md-2"
+      ref={menuRef}
+      onMouseEnter={handleNavExpand}
+      onMouseLeave={handleNavExpand}
+    >
       <div className="nav__button nav__header flex flex-jc-sb">
         {isNavExpanded && <Logo />}
 
