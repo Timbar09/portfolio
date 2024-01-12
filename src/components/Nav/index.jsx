@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link, useLocation } from 'react-router-dom';
 
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
 
+import NavLinkItem from './NavLinkItem';
 import SocialList from '../globals/SocialList';
 import Logo from '../globals/Logo';
 import { menuItems } from './menuItems';
@@ -12,7 +12,6 @@ import './index.scss';
 
 const Nav = ({ handleClick, isMenuOpen }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
-  const location = useLocation();
   const menuRef = useRef();
 
   const handleNavExpand = () => {
@@ -76,20 +75,12 @@ const Nav = ({ handleClick, isMenuOpen }) => {
       <ul className="nav__list">
         {menuItems.map((item) => {
           return (
-            <li key={item.id} className="nav__item">
-              <Link
-                to={item.url}
-                className={`flex flex-ai-c gap-1 p-1 ${
-                  location.pathname === item.url ? 'active' : ''
-                }`}
-                onClick={handleClick}
-              >
-                {item.icon}
-                {isNavExpanded && (
-                  <span className="nav__item--text">{item.name}</span>
-                )}
-              </Link>
-            </li>
+            <NavLinkItem
+              key={item.id}
+              LinkItem={item}
+              isNavExpanded={isNavExpanded}
+              handleClick={handleClick}
+            />
           );
         })}
       </ul>
