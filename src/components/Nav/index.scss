@@ -24,11 +24,15 @@
   }
 
   &.open {
-    animation: slide-in 500ms ease-in-out forwards;
+    @include breakpoint-down('sm') {
+      animation: slide-in 500ms ease-in-out forwards;
+    }
   }
 
   &.closed {
-    animation: slide-out 500ms ease-in-out forwards;
+    @include breakpoint-down('sm') {
+      animation: slide-out 500ms ease-in-out forwards;
+    }
   }
 
   &__logo {
