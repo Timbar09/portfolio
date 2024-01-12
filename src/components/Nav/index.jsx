@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
 
@@ -13,6 +14,7 @@ import './index.scss';
 const Nav = ({ handleClick, isMenuOpen }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const menuRef = useRef();
+  const isMobile = useMediaQuery('sm', 'down');
 
   const handleNavExpand = () => {
     setIsNavExpanded(!isNavExpanded);
@@ -74,10 +76,14 @@ const Nav = ({ handleClick, isMenuOpen }) => {
 
       <ul className="nav__list">
         {menuItems.map((item) => {
-          return (
+          return isMobile ? (
+            <li className="nav__menu--item" key={item.id}>
+              Menu Item
+            </li>
+          ) : (
             <NavLinkItem
-              key={item.id}
               LinkItem={item}
+              key={item.id}
               isNavExpanded={isNavExpanded}
               handleClick={handleClick}
             />
