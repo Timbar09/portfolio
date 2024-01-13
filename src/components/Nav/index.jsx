@@ -44,8 +44,8 @@ const Nav = ({ handleClick, isMenuOpen }) => {
     <nav
       className="nav p-3 p_md-2"
       ref={menuRef}
-      onMouseEnter={handleNavExpand}
-      onMouseLeave={handleNavExpand}
+      onMouseEnter={!isMobile ? handleNavExpand : undefined}
+      onMouseLeave={!isMobile ? handleNavExpand : undefined}
     >
       <div className="nav__header flex flex-jc-sb">
         <div className="nav__logo">
