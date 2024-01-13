@@ -1,17 +1,16 @@
-import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link, useLocation } from 'react-router-dom';
 
-const NavLinkItem = ({ LinkItem, isNavExpanded, handleClick }) => {
+const NavLinkItem = ({ LinkItem, isNavExpanded }) => {
   const location = useLocation();
 
   return (
-    <li className="nav__item">
+    <li className="nav__item desktop">
       <Link
         to={LinkItem.url}
         className={`flex flex-ai-c gap-1 p-1 ${
           location.pathname === LinkItem.url ? 'active' : ''
         }`}
-        onClick={handleClick}
       >
         {LinkItem.icon}
         {isNavExpanded && (
@@ -25,7 +24,6 @@ const NavLinkItem = ({ LinkItem, isNavExpanded, handleClick }) => {
 NavLinkItem.propTypes = {
   LinkItem: PropTypes.object.isRequired,
   isNavExpanded: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func.isRequired,
 };
 
 export default NavLinkItem;
