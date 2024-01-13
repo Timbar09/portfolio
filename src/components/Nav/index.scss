@@ -102,18 +102,25 @@
   }
 
   &__item {
-    font-size: 1.5rem;
     margin-top: 0.5rem;
     position: relative;
+
+    &.mobile {
+      font-size: 1.5rem;
+    }
+
+    &.desktop {
+      font-size: 2rem;
+    }
 
     a {
       width: 100%;
       border-radius: 0.25rem;
       transition: background-color 100ms ease-in-out;
 
-      @include breakpoint-up('md') {
-        font-size: 2rem;
-      }
+      // @include breakpoint-up('md') {
+      //   font-size: 2rem;
+      // }
 
       &::before {
         content: '';

@@ -5,8 +5,10 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
 
 import NavLinkItem from './NavLinkItem';
+import NavMenuItem from './NavMenuItem';
 import SocialList from '../globals/SocialList';
 import Logo from '../globals/Logo';
+
 import { menuItems } from './menuItems';
 
 import './index.scss';
@@ -77,15 +79,16 @@ const Nav = ({ handleClick, isMenuOpen }) => {
       <ul className="nav__list">
         {menuItems.map((item) => {
           return isMobile ? (
-            <li className="nav__menu--item" key={item.id}>
-              Menu Item
-            </li>
+            <NavMenuItem
+              MenuItem={item}
+              key={item.id}
+              handleClick={handleClick}
+            />
           ) : (
             <NavLinkItem
               LinkItem={item}
               key={item.id}
               isNavExpanded={isNavExpanded}
-              handleClick={handleClick}
             />
           );
         })}
