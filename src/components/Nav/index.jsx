@@ -52,19 +52,20 @@ const Nav = ({ handleClick, isMenuOpen }) => {
           <Logo />
         </div>
 
-        {isNavExpanded && (
-          <div className="nav__button">
-            <button
-              type="button"
-              className={`nav__close-menu grid grid-pi-c ${
-                isMenuOpen ? 'roll-left' : 'roll-right'
-              }`}
-              onClick={handleClick}
-            >
-              <CloseMenuIcon />
-            </button>
-          </div>
-        )}
+        {isNavExpanded ||
+          (isMobile && (
+            <div className="nav__button">
+              <button
+                type="button"
+                className={`nav__close-menu grid grid-pi-c ${
+                  isMenuOpen ? 'roll-left' : 'roll-right'
+                }`}
+                onClick={handleClick}
+              >
+                <CloseMenuIcon />
+              </button>
+            </div>
+          ))}
       </div>
 
       <div className="nav__social py-1">
