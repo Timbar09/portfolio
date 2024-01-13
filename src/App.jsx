@@ -10,45 +10,37 @@ const App = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    const menu = document.querySelector('.nav');
+    const hamburgerButton = document.querySelector('.nav__hamburger');
 
     if (isMenuOpen) {
-      // Add open class to menu and remove closed class
-      document.querySelector('.nav').classList.remove('open');
-      document.querySelector('.nav').classList.add('closed');
+      menu.classList.remove('open');
+      menu.classList.add('closed');
 
       setTimeout(() => {
-        // Remove closed class from menu
-        document.querySelector('.nav').classList.remove('closed');
+        menu.classList.remove('closed');
       }, 500);
 
-      // Add disappear class to menu__button--open parent div and remove appear class
-      document
-        .querySelector('.nav__hamburger')
-        .parentElement.classList.add('active');
-      document
-        .querySelector('.nav__hamburger')
-        .parentElement.classList.remove('inactive');
+      hamburgerButton.parentElement.classList.add('active');
+      hamburgerButton.parentElement.classList.remove('inactive');
     } else {
-      document.querySelector('.nav').classList.remove('closed');
-      document.querySelector('.nav').classList.add('open');
+      menu.classList.remove('closed');
+      menu.classList.add('open');
 
-      // Add appear class to menu__button--open and remove disappear class
-      document
-        .querySelector('.nav__hamburger')
-        .parentElement.classList.add('inactive');
-      document
-        .querySelector('.nav__hamburger')
-        .parentElement.classList.remove('active');
+      hamburgerButton.parentElement.classList.add('inactive');
+      hamburgerButton.parentElement.classList.remove('active');
     }
   };
 
   return (
     <div className="app flex">
       <header className="p-2 grid_sm grid_sm-pi-c">
-        <HamburgerButton handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
-
         {location.pathname !== '/' && (
-          <Nav handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
+          <>
+            <HamburgerButton handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
+
+            <Nav handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
+          </>
         )}
       </header>
 
