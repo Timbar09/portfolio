@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+
 import { AiFillGithub as Github } from 'react-icons/ai';
 import { AiFillLinkedin as Linkedin } from 'react-icons/ai';
 import { AiFillTwitterCircle as Twitter } from 'react-icons/ai';
@@ -25,7 +27,9 @@ const socialsData = [
 ];
 
 const SocialList = ({ className = '', isNavExpanded }) => {
-  const dataToShow = isNavExpanded ? socialsData : socialsData.slice(0, 1);
+  const isMobile = useMediaQuery('sm', 'down');
+  const dataToShow =
+    isNavExpanded || isMobile ? socialsData : socialsData.slice(0, 1);
 
   return (
     <ul className={`social__list ${className} ${isNavExpanded ? '' : 'px-1'}`}>
