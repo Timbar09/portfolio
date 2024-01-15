@@ -14,7 +14,7 @@ const NavLinkItem = ({ LinkItem, isNavExpanded }) => {
       >
         {LinkItem.icon}
         {isNavExpanded && (
-          <span className="nav__item--text">{LinkItem.name}</span>
+          <span className="nav__item--text desktop">{LinkItem.name}</span>
         )}
       </Link>
     </li>

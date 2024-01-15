@@ -33,11 +33,11 @@ const SocialList = ({ className = '', isNavExpanded }) => {
 
   return (
     <ul className={`social__list ${className} ${isNavExpanded ? '' : 'px-1'}`}>
-      {dataToShow.map((social) => {
+      {dataToShow.map(({ id, url, icon }) => {
         return (
-          <li key={social.id} className="social__list--item">
-            <a href={social.url} target="_blank" rel="noreferrer">
-              {social.icon}
+          <li key={id} className="social__list--item">
+            <a href={url} target="_blank" rel="noreferrer">
+              {icon}
             </a>
           </li>
         );
