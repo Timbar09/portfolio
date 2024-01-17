@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { MdOutlineLightMode as LightModeIcon } from 'react-icons/md';
 import { MdOutlineDarkMode as DarkModeIcon } from 'react-icons/md';
 
-const DarkmodeToggle = () => {
+const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
@@ -21,4 +21,4 @@ const DarkmodeToggle = () => {
   );
 };
 
-export default DarkmodeToggle;
+export default ThemeToggle;
