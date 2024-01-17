@@ -40,8 +40,8 @@ const App = () => {
   };
 
   return (
-    <DarkModeContext.Provider value={false}>
-      <div className="app flex">
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="app flex" data-theme={theme}>
         <header className="p-2 grid_sm grid_sm-pi-c">
           {location.pathname !== '/' && (
             <>
@@ -59,7 +59,7 @@ const App = () => {
           <Outlet />
         </main>
       </div>
-    </DarkModeContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 
