@@ -4,7 +4,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import HamburgerButton from './components/Nav/HamburgerButton';
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext(null);
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

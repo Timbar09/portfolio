@@ -24,3 +24,14 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+[data-theme='light'] {
+  // --accent-100: #3d5a80;
+  // --accent-200: #cee8ff;
+  --text-100: #0c1624;
+  --text-200: #1f2b3e;
+  --text-300: #374357;
+  --bg-100: #ffffff;
+  --bg-200: #f5f5f5;
+  --bg-300: #e0e0e0;
+}
