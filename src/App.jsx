@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import HamburgerButton from './components/Nav/HamburgerButton';
+
+export const DarkModeContext = createContext();
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,21 +35,26 @@ const App = () => {
   };
 
   return (
-    <div className="app flex">
-      <header className="p-2 grid_sm grid_sm-pi-c">
-        {location.pathname !== '/' && (
-          <>
-            <HamburgerButton handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
+    <DarkModeContext.Provider value={false}>
+      <div className="app flex">
+        <header className="p-2 grid_sm grid_sm-pi-c">
+          {location.pathname !== '/' && (
+            <>
+              <HamburgerButton
+                handleClick={toggleMenu}
+                isMenuOpen={isMenuOpen}
+              />
 
-            <Nav handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
-          </>
-        )}
-      </header>
+              <Nav handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
+            </>
+          )}
+        </header>
 
-      <main>
-        <Outlet />
-      </main>
-    </div>
+        <main>
+          <Outlet />
+        </main>
+      </div>
+    </DarkModeContext.Provider>
   );
 };
 
