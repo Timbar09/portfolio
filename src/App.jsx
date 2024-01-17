@@ -9,7 +9,11 @@ export const ThemeContext = createContext();
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
