@@ -4,11 +4,12 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import HamburgerButton from './components/Nav/HamburgerButton';
 
-export const DarkModeContext = createContext();
+export const ThemeContext = createContext();
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const [theme, setTheme] = useState('light');
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
