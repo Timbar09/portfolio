@@ -7,7 +7,7 @@ import { IoClose as CloseMenuIcon } from 'react-icons/io5';
 import NavLinkItem from './NavLinkItem';
 import NavMenuItem from './NavMenuItem';
 import SocialList from '../globals/SocialList';
-import DarkmodeToggle from './DarkmodeToggle';
+import ThemeToggle from './ThemeToggle';
 import Logo from '../globals/Logo';
 
 import { menuItems } from './menuItems';
@@ -98,7 +98,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
 
       <div className="nav__separator" />
 
-      <DarkmodeToggle />
+      <ThemeToggle />
     </nav>
   );
 };
