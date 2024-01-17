@@ -1,7 +1,6 @@
 @use '../../assets/stylesheets/util/' as *;
 
 .nav {
-  --bg-menu: var(--text-100);
   --text: var(--bg-100);
 
   position: fixed;
@@ -10,7 +9,7 @@
   width: 75%;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   color: var(--text);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--opaque-100);
   backdrop-filter: blur(5px);
   border-radius: 0.25rem;
   visibility: hidden;
