@@ -78,7 +78,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
 
       <div className="nav__separator" />
 
-      <ul className="nav__list">
+      <ul className="nav__list py-1 flex flex-col gap-1">
         {menuItems.map((item) => {
           return isMobile ? (
             <NavMenuItem
