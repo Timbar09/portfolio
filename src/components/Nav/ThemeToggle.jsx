@@ -8,7 +8,7 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <button className="nav__darkmode-toggle p-2" title="Toggle dark mode">
+    <button className="nav__theme-toggle p-1" title="Toggle dark mode">
       {theme === 'dark' ? (
         <LightModeIcon onClick={toggleTheme} />
       ) : (
