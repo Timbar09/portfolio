@@ -98,7 +98,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
 
       <div className="nav__separator" />
 
-      <ThemeToggle />
+      <ThemeToggle isNavExpanded={isNavExpanded} />
     </nav>
   );
 };
