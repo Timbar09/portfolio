@@ -28,10 +28,10 @@ const ThemeToggle = ({ isNavExpanded }) => {
   }, [isNavExpanded, isMobile]);
 
   return (
-    <div className="p-1">
+    <div className={`${isNavExpanded ? 'py-1' : 'p-1'}`}>
       {showButton ? (
         <button
-          className="nav__theme nav__theme-animate flex appear"
+          className="nav__theme nav__theme-animate flex slide-in"
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           onClick={toggleTheme}
         >
@@ -46,7 +46,9 @@ const ThemeToggle = ({ isNavExpanded }) => {
         </button>
       ) : (
         <button
-          className="nav__theme nav__theme-minimized"
+          className={`nav__theme nav__theme-minimized ${
+            isNavExpanded ? 'slide-out' : 'slide-in'
+          }`}
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
           {theme === 'dark' ? (

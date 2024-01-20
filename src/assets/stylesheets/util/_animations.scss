@@ -53,6 +53,25 @@
   }
 }
 
+@keyframes slide-in-left {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    left: -5rem;
+  }
+
+  1% {
+    opacity: 0;
+    left: -5rem;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+  }
+}
+
 @keyframes slide-out {
   0% {
     visibility: visible;
@@ -70,6 +89,26 @@
     visibility: hidden;
     opacity: 0;
     right: -5rem;
+  }
+}
+
+@keyframes slide-out-left {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0;
+    left: -5rem;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    left: -5rem;
   }
 }
 

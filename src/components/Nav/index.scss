@@ -213,13 +213,16 @@
     font-size: 2rem;
     color: inherit;
 
-    &.appear {
-      animation: appear 250ms ease-in-out forwards,
-        slide-in 150ms ease-in-out forwards;
-    }
-
     &-minimized {
       transition: color 150ms ease-in-out;
+
+      &.slide-in {
+        animation: slide-in-left 150ms ease-in-out forwards;
+      }
+
+      &.slide-out {
+        animation: slide-out-left 150ms ease-in-out forwards;
+      }
 
       &:hover {
         color: var(--primary-100);
@@ -229,10 +232,15 @@
     &-animate {
       --toggle-bg: var(--bg-200);
 
+      margin: 6px 0;
       font-size: 0.75rem;
       border-radius: 0.25rem;
       border: 0.15rem solid var(--toggle-bg);
       background-color: var(--toggle-bg);
+
+      &.slide-in {
+        animation: slide-in 150ms ease-in-out forwards;
+      }
 
       &:hover {
         --toggle-bg: var(--bg-300);
