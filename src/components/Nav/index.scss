@@ -34,6 +34,10 @@
     }
   }
 
+  &__expand-toggle {
+    font-size: 2rem;
+  }
+
   &__logo {
     @include breakpoint-up('md') {
       display: none;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
+import { HiMenuAlt4 as HamburgerIcon } from 'react-icons/hi';
 
 import NavLinkItem from './NavLinkItem';
 import NavMenuItem from './NavMenuItem';
@@ -42,12 +43,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
   }, [handleClick, isMenuOpen]);
 
   return (
-    <nav
-      className="nav p-3 p_md-2"
-      ref={menuRef}
-      onMouseEnter={!isMobile ? handleNavExpand : undefined}
-      onMouseLeave={!isMobile ? handleNavExpand : undefined}
-    >
+    <nav className="nav p-3 p_md-2" ref={menuRef}>
       <div className="nav__header flex flex-jc-sb">
         <div className="nav__logo">
           <Logo />
@@ -67,6 +63,14 @@ const Nav = ({ handleClick, isMenuOpen }) => {
               </button>
             </div>
           ))}
+
+        <button
+          type="button"
+          className="nav__expand-toggle p-1"
+          onClick={handleNavExpand}
+        >
+          {isNavExpanded ? <CloseMenuIcon /> : <HamburgerIcon />}
+        </button>
       </div>
 
       <div className="nav__social py-1">
