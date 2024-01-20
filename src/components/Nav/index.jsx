@@ -12,7 +12,7 @@ import { menuItems } from './menuItems';
 
 import './index.scss';
 
-const Nav = ({ handleClick, isMenuOpen }) => {
+const Nav = ({ handleMenuToggle, isMenuOpen }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const menuRef = useRef();
   const isMobile = useMediaQuery('sm', 'down');
@@ -28,7 +28,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
         !menuRef.current.contains(event.target) &&
         isMenuOpen
       ) {
-        handleClick();
+        handleMenuToggle();
       }
     };
 
@@ -37,7 +37,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [handleClick, isMenuOpen]);
+  }, [handleMenuToggle, isMenuOpen]);
 
   return (
     <nav className="nav p-3 p_md-2" ref={menuRef}>
@@ -46,7 +46,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
         isMobile={isMobile}
         isMenuOpen={isMenuOpen}
         handleNavExpand={handleNavExpand}
-        handleClick={handleClick}
+        handleMenuToggle={handleMenuToggle}
       />
 
       <div className="nav__separator" />
@@ -66,7 +66,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
             <NavMenuItem
               MenuItem={item}
               key={item.id}
-              handleClick={handleClick}
+              handleClick={handleMenuToggle}
             />
           ) : (
             <NavLinkItem
@@ -86,7 +86,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
 };
 
 Nav.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  handleMenuToggle: PropTypes.func.isRequired,
   isMenuOpen: PropTypes.bool.isRequired,
 };
 

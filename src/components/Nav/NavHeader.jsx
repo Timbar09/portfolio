@@ -10,7 +10,7 @@ const NavHeader = ({
   isMobile,
   isMenuOpen,
   handleNavExpand,
-  handleClick,
+  handleMenuToggle,
 }) => {
   return (
     <div className="nav__header flex flex-jc-sb flex-ai-c pb-1">
@@ -23,7 +23,7 @@ const NavHeader = ({
             className={`nav__close-menu grid grid-pi-c ${
               isMenuOpen ? 'roll-left' : 'roll-right'
             }`}
-            onClick={handleClick}
+            onClick={handleMenuToggle}
           >
             <CloseMenuIcon />
           </button>
@@ -49,7 +49,7 @@ NavHeader.propTypes = {
   isMobile: PropTypes.bool.isRequired,
   isMenuOpen: PropTypes.bool.isRequired,
   handleNavExpand: PropTypes.func.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  handleMenuToggle: PropTypes.func.isRequired,
 };
 
 export default NavHeader;

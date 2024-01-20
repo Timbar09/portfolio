@@ -50,7 +50,7 @@ const App = () => {
                 isMenuOpen={isMenuOpen}
               />
 
-              <Nav handleClick={toggleMenu} isMenuOpen={isMenuOpen} />
+              <Nav handleMenuToggle={toggleMenu} isMenuOpen={isMenuOpen} />
             </>
           )}
         </header>
