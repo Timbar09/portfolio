@@ -45,32 +45,35 @@ const Nav = ({ handleClick, isMenuOpen }) => {
   return (
     <nav className="nav p-3 p_md-2" ref={menuRef}>
       <div className="nav__header flex flex-jc-sb flex-ai-c">
-        {isNavExpanded && <Logo />}
+        {isNavExpanded || isMobile ? <Logo /> : null}
 
-        {isNavExpanded ||
-          (isMobile && (
-            <div className="nav__button">
-              <button
-                type="button"
-                className={`nav__close-menu grid grid-pi-c ${
-                  isMenuOpen ? 'roll-left' : 'roll-right'
-                }`}
-                onClick={handleClick}
-              >
-                <CloseMenuIcon />
-              </button>
-            </div>
-          ))}
+        {isMobile && (
+          <div className="nav__button">
+            <button
+              type="button"
+              className={`nav__close-menu grid grid-pi-c ${
+                isMenuOpen ? 'roll-left' : 'roll-right'
+              }`}
+              onClick={handleClick}
+            >
+              <CloseMenuIcon />
+            </button>
+          </div>
+        )}
 
-        <button
-          type="button"
-          className="nav__expand-toggle p-1"
-          onClick={handleNavExpand}
-          title={isNavExpanded ? 'Collapse menu' : 'Expand menu'}
-        >
-          {isNavExpanded ? <CloseMenuIcon /> : <HamburgerIcon />}
-        </button>
+        {!isMobile && (
+          <button
+            type="button"
+            className="nav__expand-toggle p-1"
+            onClick={handleNavExpand}
+            title={isNavExpanded ? 'Collapse menu' : 'Expand menu'}
+          >
+            {isNavExpanded ? <CloseMenuIcon /> : <HamburgerIcon />}
+          </button>
+        )}
       </div>
+
+      <div className="nav__separator" />
 
       <div className="nav__social py-1">
         <SocialList
