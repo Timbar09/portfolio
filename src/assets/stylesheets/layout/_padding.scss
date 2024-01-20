@@ -232,4 +232,144 @@
       }
     }
   }
+
+  &b {
+    &-0 {
+      padding-bottom: 0;
+    }
+
+    &-1 {
+      padding-bottom: 0.5rem;
+    }
+
+    &-2 {
+      padding-bottom: 1rem;
+    }
+
+    &-3 {
+      padding-bottom: 1.75rem;
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up('md') {
+          padding-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('md') {
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('md') {
+          padding-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('md') {
+          padding-bottom: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up('lg') {
+          padding-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('lg') {
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('lg') {
+          padding-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('lg') {
+          padding-bottom: 1.75rem;
+        }
+      }
+    }
+  }
+
+  &t {
+    &-0 {
+      padding-top: 0;
+    }
+
+    &-1 {
+      padding-top: 0.5rem;
+    }
+
+    &-2 {
+      padding-top: 1rem;
+    }
+
+    &-3 {
+      padding-top: 1.75rem;
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up('md') {
+          padding-top: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('md') {
+          padding-top: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('md') {
+          padding-top: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('md') {
+          padding-top: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up('lg') {
+          padding-top: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('lg') {
+          padding-top: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('lg') {
+          padding-top: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('lg') {
+          padding-top: 1.75rem;
+        }
+      }
+    }
+  }
 }

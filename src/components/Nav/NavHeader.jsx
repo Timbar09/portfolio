@@ -13,7 +13,7 @@ const NavHeader = ({
   handleClick,
 }) => {
   return (
-    <div className="nav__header flex flex-jc-sb flex-ai-c">
+    <div className="nav__header flex flex-jc-sb flex-ai-c pb-1">
       {isNavExpanded || isMobile ? <Logo /> : null}
 
       {isMobile && (
