@@ -2,14 +2,11 @@ import { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
-import { IoClose as CloseMenuIcon } from 'react-icons/io5';
-import { HiMenuAlt4 as HamburgerIcon } from 'react-icons/hi';
-
 import NavLinkItem from './NavLinkItem';
 import NavMenuItem from './NavMenuItem';
 import SocialList from '../globals/SocialList';
 import ThemeToggle from './ThemeToggle';
-import Logo from '../globals/Logo';
+import NavHeader from './NavHeader';
 
 import { menuItems } from './menuItems';
 
@@ -44,34 +41,13 @@ const Nav = ({ handleClick, isMenuOpen }) => {
 
   return (
     <nav className="nav p-3 p_md-2" ref={menuRef}>
-      <div className="nav__header flex flex-jc-sb flex-ai-c">
-        {isNavExpanded || isMobile ? <Logo /> : null}
-
-        {isMobile && (
-          <div className="nav__button">
-            <button
-              type="button"
-              className={`nav__close-menu grid grid-pi-c ${
-                isMenuOpen ? 'roll-left' : 'roll-right'
-              }`}
-              onClick={handleClick}
-            >
-              <CloseMenuIcon />
-            </button>
-          </div>
-        )}
-
-        {!isMobile && (
-          <button
-            type="button"
-            className="nav__expand-toggle p-1"
-            onClick={handleNavExpand}
-            title={isNavExpanded ? 'Collapse menu' : 'Expand menu'}
-          >
-            {isNavExpanded ? <CloseMenuIcon /> : <HamburgerIcon />}
-          </button>
-        )}
-      </div>
+      <NavHeader
+        isNavExpanded={isNavExpanded}
+        isMobile={isMobile}
+        isMenuOpen={isMenuOpen}
+        handleNavExpand={handleNavExpand}
+        handleClick={handleClick}
+      />
 
       <div className="nav__separator" />
 
