@@ -9,7 +9,10 @@ const ThemeToggle = () => {
 
   return (
     <>
-      <button className="nav__theme p-1" title={`Switch to ${theme} mode`}>
+      <button
+        className="nav__theme nav__theme-minimized p-1"
+        title={`Switch to ${theme} mode`}
+      >
         {theme === 'dark' ? (
           <LightModeIcon onClick={toggleTheme} />
         ) : (
