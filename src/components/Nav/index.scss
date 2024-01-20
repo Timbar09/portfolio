@@ -158,8 +158,50 @@
     }
   }
 
-  &__theme-toggle {
+  &__theme {
+    --width-dimension: 4rem;
+
+    position: relative;
     font-size: 2rem;
     color: inherit;
+
+    &-animate {
+      --toggle-bg: var(--bg-100);
+
+      font-size: 0.75rem;
+      border-radius: 5rem;
+      border: 0.15rem solid var(--toggle-bg);
+      background-color: var(--toggle-bg);
+
+      .darkmode,
+      .lightmode {
+        width: var(--width-dimension);
+        border-radius: inherit;
+        color: var(--bg-300);
+        padding: 0.25rem 0;
+      }
+
+      .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: var(--width-dimension);
+        border-radius: inherit;
+        color: var(--bg-300);
+        background-color: var(--text-100);
+        font-weight: 700;
+        gap: 0.25rem;
+        transition: left 150ms ease-in-out;
+
+        &-lightmode {
+          left: var(--width-dimension);
+        }
+
+        svg {
+          font-size: 1.15rem;
+        }
+      }
+    }
   }
 }
