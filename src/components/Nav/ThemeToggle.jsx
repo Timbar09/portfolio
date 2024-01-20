@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { ThemeContext } from '../../App';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 import { MdOutlineLightMode as LightModeIcon } from 'react-icons/md';
 import { MdOutlineDarkMode as DarkModeIcon } from 'react-icons/md';
 
 const ThemeToggle = ({ isNavExpanded }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const isMobile = useMediaQuery('sm', 'down');
 
   return (
     <div className="p-1">
-      {isNavExpanded ? (
+      {isNavExpanded || isMobile ? (
         <button
           className="nav__theme nav__theme-animate flex"
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
