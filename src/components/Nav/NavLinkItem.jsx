@@ -8,14 +8,13 @@ const NavLinkItem = ({ LinkItem, isNavExpanded }) => {
     <li className="nav__item desktop">
       <Link
         to={LinkItem.url}
-        className={`flex flex-ai-c gap-1 p-1 ${
-          location.pathname === LinkItem.url ? 'active' : ''
-        }`}
+        className={`flex flex-col p-1 ${
+          isNavExpanded ? 'expanded' : 'minimized'
+        }
+        ${location.pathname === LinkItem.url ? 'active' : ''}`}
       >
         {LinkItem.icon}
-        {isNavExpanded && (
-          <span className="nav__item--text desktop">{LinkItem.name}</span>
-        )}
+        <span className="nav__item--text desktop">{LinkItem.name}</span>
       </Link>
     </li>
   );

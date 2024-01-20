@@ -16,7 +16,7 @@ export const menuItems = [
   {
     id: 2,
     icon: <AboutMeIcon />,
-    name: 'About Me',
+    name: 'About',
     url: '/about',
   },
   {
@@ -28,7 +28,7 @@ export const menuItems = [
   {
     id: 4,
     icon: <CapabilitiesIcon />,
-    name: 'Capabilities',
+    name: 'Abilities',
     url: '/capabilities',
   },
   {
