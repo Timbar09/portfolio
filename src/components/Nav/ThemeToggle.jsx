@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../App';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
@@ -9,12 +9,29 @@ import { MdOutlineDarkMode as DarkModeIcon } from 'react-icons/md';
 const ThemeToggle = ({ isNavExpanded }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const isMobile = useMediaQuery('sm', 'down');
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    let timeoutId;
+
+    if (isNavExpanded || isMobile) {
+      timeoutId = setTimeout(() => {
+        setShowButton(true);
+      }, 200);
+    } else {
+      setShowButton(false);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [isNavExpanded, isMobile]);
 
   return (
     <div className="p-1">
-      {isNavExpanded || isMobile ? (
+      {showButton ? (
         <button
-          className="nav__theme nav__theme-animate flex"
+          className="nav__theme nav__theme-animate flex appear"
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           onClick={toggleTheme}
         >

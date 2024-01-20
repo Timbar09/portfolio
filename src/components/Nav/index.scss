@@ -213,6 +213,11 @@
     font-size: 2rem;
     color: inherit;
 
+    &.appear {
+      animation: appear 250ms ease-in-out forwards,
+        slide-in 150ms ease-in-out forwards;
+    }
+
     &-minimized {
       transition: color 150ms ease-in-out;
 
