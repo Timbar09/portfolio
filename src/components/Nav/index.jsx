@@ -44,10 +44,8 @@ const Nav = ({ handleClick, isMenuOpen }) => {
 
   return (
     <nav className="nav p-3 p_md-2" ref={menuRef}>
-      <div className="nav__header flex flex-jc-sb">
-        <div className="nav__logo">
-          <Logo />
-        </div>
+      <div className="nav__header flex flex-jc-sb flex-ai-c">
+        {isNavExpanded && <Logo />}
 
         {isNavExpanded ||
           (isMobile && (
@@ -68,6 +66,7 @@ const Nav = ({ handleClick, isMenuOpen }) => {
           type="button"
           className="nav__expand-toggle p-1"
           onClick={handleNavExpand}
+          title={isNavExpanded ? 'Collapse menu' : 'Expand menu'}
         >
           {isNavExpanded ? <CloseMenuIcon /> : <HamburgerIcon />}
         </button>

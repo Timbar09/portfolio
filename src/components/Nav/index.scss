@@ -36,6 +36,12 @@
 
   &__expand-toggle {
     font-size: 2rem;
+    color: inherit;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: var(--primary-100);
+    }
   }
 
   &__logo {
