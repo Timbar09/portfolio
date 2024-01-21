@@ -52,6 +52,7 @@ const ThemeToggle = ({ isNavExpanded }) => {
             isNavExpanded ? 'slide-out' : 'slide-in'
           }`}
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          onClick={toggleTheme}
         >
           {theme === 'dark' ? (
             <LightModeIcon onClick={toggleTheme} />

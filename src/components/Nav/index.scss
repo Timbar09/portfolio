@@ -158,6 +158,13 @@
         span {
           font-size: 0.5rem;
           text-align: center;
+          display: block;
+          bottom: 0;
+          left: 50%;
+          translate: -50% 0;
+          position: absolute;
+          transition: font-size 150ms ease-in-out, bottom 150ms ease-in-out,
+            left 150ms ease-in-out, translate 150ms ease-in-out;
         }
       }
     }
@@ -182,16 +189,6 @@
         opacity: 0;
         z-index: -1;
         transition: opacity 150ms ease-in-out, width 150ms ease-in-out;
-      }
-
-      span {
-        display: block;
-        bottom: 0;
-        left: 50%;
-        translate: -50% 0;
-        position: absolute;
-        transition: font-size 150ms ease-in-out, bottom 150ms ease-in-out,
-          left 150ms ease-in-out, translate 150ms ease-in-out;
       }
 
       &.expanded {
@@ -253,20 +250,21 @@
     }
 
     &-animate {
-      --toggle-bg: var(--bg-200);
+      --toggle-bg: var(--bg-300);
 
       margin: 6px 0;
       font-size: 0.75rem;
       border-radius: 0.25rem;
       border: 0.15rem solid var(--toggle-bg);
       background-color: var(--toggle-bg);
+      transition: box-shadow 150ms ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 10px var(--opaque-100);
+      }
 
       &.slide-in {
         animation: slide-in 150ms ease-in-out forwards;
-      }
-
-      &:hover {
-        --toggle-bg: var(--bg-300);
       }
 
       .darkmode,
@@ -290,6 +288,10 @@
         gap: 0.25rem;
         box-shadow: 0 0 10px var(--opaque-100);
         transition: left 150ms ease-in-out;
+
+        &:hover {
+          background-color: var(--text-300);
+        }
 
         &-lightmode {
           left: var(--width-dimension);
