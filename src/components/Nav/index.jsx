@@ -51,12 +51,12 @@ const Nav = ({ handleMenuToggle, isMenuOpen }) => {
 
       <div className="nav__separator" />
 
-      <div className="nav__social py-1">
+      {/* <div className="nav__social py-1">
         <SocialList
           className="social-lg flex flex-jc-c gap-2"
           isNavExpanded={isNavExpanded}
         />
-      </div>
+      </div> */}
 
       <div className="nav__separator" />
 
@@ -73,6 +73,7 @@ const Nav = ({ handleMenuToggle, isMenuOpen }) => {
               LinkItem={item}
               key={item.id}
               isNavExpanded={isNavExpanded}
+              isMenuOpen={isMenuOpen}
             />
           );
         })}
@@ -80,7 +81,7 @@ const Nav = ({ handleMenuToggle, isMenuOpen }) => {
 
       <div className="nav__separator" />
 
-      <ThemeToggle isNavExpanded={isNavExpanded} />
+      <ThemeToggle isNavExpanded={isNavExpanded} isMenuOpen={isMenuOpen} />
     </nav>
   );
 };

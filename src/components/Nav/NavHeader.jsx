@@ -1,9 +1,11 @@
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Logo from '../globals/Logo';
 
 import { IoClose as CloseMenuIcon } from 'react-icons/io5';
-import { HiMenuAlt4 as HamburgerIcon } from 'react-icons/hi';
+import { IoMdExpand as ExpandMenuIcon } from 'react-icons/io';
+import { CgMinimize as MinimizeMenuIcon } from 'react-icons/cg';
 
 const NavHeader = ({
   isNavExpanded,
@@ -12,9 +14,33 @@ const NavHeader = ({
   handleNavExpand,
   handleMenuToggle,
 }) => {
+  const [showLogo, setShowLogo] = useState(false);
+
+  useEffect(() => {
+    let timeoutId;
+
+    if (isNavExpanded || isMobile) {
+      timeoutId = setTimeout(() => {
+        setShowLogo(true);
+      }, 200);
+    } else {
+      setShowLogo(false);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [isNavExpanded, isMobile]);
+
   return (
     <div className="nav__header flex flex-jc-sb flex-ai-c pb-1">
-      {isNavExpanded || isMobile ? <Logo /> : null}
+      <div className="nav__logo">
+        {showLogo && (
+          <Logo
+            className={`logo ${isNavExpanded && !isMobile ? 'slide-in' : ''}`}
+          />
+        )}
+      </div>
 
       {isMobile && (
         <div className="nav__button">
@@ -35,9 +61,13 @@ const NavHeader = ({
           type="button"
           className="nav__expand-toggle p-1"
           onClick={handleNavExpand}
-          title={isNavExpanded ? 'Collapse menu' : 'Expand menu'}
+          title={isNavExpanded ? 'Minimize menu' : 'Expand menu'}
         >
-          {isNavExpanded ? <CloseMenuIcon /> : <HamburgerIcon />}
+          {isNavExpanded ? (
+            <MinimizeMenuIcon className="minimize" />
+          ) : (
+            <ExpandMenuIcon className="expand" />
+          )}
         </button>
       )}
     </div>

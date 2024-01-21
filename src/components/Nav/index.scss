@@ -34,6 +34,24 @@
     }
   }
 
+  &__header {
+    @include breakpoint-up('md') {
+      flex-direction: row-reverse;
+    }
+
+    button {
+      @include breakpoint-up('md') {
+        display: grid;
+      }
+    }
+  }
+
+  &__logo {
+    .slide-in {
+      animation: slide-in 200ms ease-in-out forwards;
+    }
+  }
+
   &__expand-toggle {
     font-size: 2rem;
     color: inherit;
@@ -42,11 +60,22 @@
     &:hover {
       color: var(--primary-100);
     }
-  }
 
-  &__logo {
-    @include breakpoint-up('md') {
-      display: none;
+    .minimize {
+      transition: scale 150ms ease-in-out;
+
+      &:hover {
+        scale: 0.85;
+      }
+    }
+
+    .expand {
+      scale: 0.85;
+      transition: scale 150ms ease-in-out;
+
+      &:hover {
+        scale: 1;
+      }
     }
   }
 
@@ -165,12 +194,6 @@
           left 150ms ease-in-out, translate 150ms ease-in-out;
       }
 
-      // &.minimized {
-      //   span {
-      //     font-size: 0.5rem;
-      //   }
-      // }
-
       &.expanded {
         width: 9rem;
 
@@ -217,11 +240,11 @@
       transition: color 150ms ease-in-out;
 
       &.slide-in {
-        animation: slide-in-left 150ms ease-in-out forwards;
+        animation: slide-in-left 200ms ease-in-out forwards;
       }
 
       &.slide-out {
-        animation: slide-out-left 150ms ease-in-out forwards;
+        animation: slide-out-left 200ms ease-in-out forwards;
       }
 
       &:hover {

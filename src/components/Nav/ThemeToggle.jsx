@@ -31,7 +31,9 @@ const ThemeToggle = ({ isNavExpanded }) => {
     <div className={`${isNavExpanded ? 'py-1' : 'p-1'}`}>
       {showButton ? (
         <button
-          className="nav__theme nav__theme-animate flex slide-in"
+          className={`nav__theme nav__theme-animate flex ${
+            isNavExpanded && !isMobile ? 'slide-in' : 'slide-out-left'
+          }`}
           title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           onClick={toggleTheme}
         >
@@ -64,6 +66,7 @@ const ThemeToggle = ({ isNavExpanded }) => {
 
 ThemeToggle.propTypes = {
   isNavExpanded: PropTypes.bool.isRequired,
+  // isMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default ThemeToggle;
