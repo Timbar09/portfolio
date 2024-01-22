@@ -123,11 +123,11 @@
     translate: 1.5rem 0;
 
     &.roll-left {
-      animation: roll-left 600ms ease-in-out forwards;
+      animation: spin-2-left 600ms ease-in-out forwards;
     }
 
     &.roll-right {
-      animation: roll-right 700ms ease-in-out forwards;
+      animation: spin-2-right 700ms ease-in-out forwards;
     }
   }
 
@@ -256,6 +256,10 @@
 
       &:hover {
         color: var(--primary-100);
+      }
+
+      .spin {
+        animation: spin-1-right 500ms ease-in-out;
       }
     }
 

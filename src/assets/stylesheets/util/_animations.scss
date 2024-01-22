@@ -112,8 +112,28 @@
   }
 }
 
-// ROLL RIGHT AND LEFT
-@keyframes roll-left {
+// SPIN RIGHT AND LEFT
+@keyframes spin-1-right {
+  0% {
+    rotate: 90deg;
+  }
+
+  100% {
+    rotate: 0;
+  }
+}
+
+@keyframes spin-1-left {
+  0% {
+    rotate: -90deg;
+  }
+
+  100% {
+    rotate: 0;
+  }
+}
+
+@keyframes spin-2-left {
   0% {
     rotate: 0;
     translate: 2.5rem 0;
@@ -125,7 +145,7 @@
   }
 }
 
-@keyframes roll-right {
+@keyframes spin-2-right {
   0% {
     rotate: 0;
     translate: 0 0;

@@ -55,9 +55,15 @@ const ThemeToggle = ({ isNavExpanded }) => {
           onClick={toggleTheme}
         >
           {theme === 'dark' ? (
-            <LightModeIcon onClick={toggleTheme} />
+            <LightModeIcon
+              onClick={toggleTheme}
+              className={theme === 'dark' && 'spin'}
+            />
           ) : (
-            <DarkModeIcon onClick={toggleTheme} />
+            <DarkModeIcon
+              onClick={toggleTheme}
+              className={theme === 'light' && 'spin'}
+            />
           )}
         </button>
       )}
@@ -67,7 +73,6 @@ const ThemeToggle = ({ isNavExpanded }) => {
 
 ThemeToggle.propTypes = {
   isNavExpanded: PropTypes.bool.isRequired,
-  // isMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default ThemeToggle;
