@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
@@ -10,6 +11,7 @@ import { AiFillTwitterCircle as Twitter } from 'react-icons/ai';
 
 import './SocialList.scss';
 import 'swiper/css';
+import 'swiper/css/autoplay';
 
 const socialsData = [
   {
@@ -63,10 +65,15 @@ const SocialList = ({ className = '', isNavExpanded }) => {
         })
       ) : (
         <Swiper
-          spaceBetween={50}
+          spaceBetween={10}
           slidesPerView={1}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
           className="social__slider"
         >
           {socialsData.map(({ id, url, icon }) => {
