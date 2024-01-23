@@ -1,10 +1,8 @@
-import {
-  RiHome3Line as HomeIcon,
-  RiUser3Line as AboutMeIcon,
-  RiFileList2Line as ProjectsIcon,
-} from 'react-icons/ri';
-import { BiMessageSquare as ContactIcon } from 'react-icons/bi';
-import { VscTools as CapabilitiesIcon } from 'react-icons/vsc';
+import { TbSmartHome as HomeIcon } from 'react-icons/tb';
+import { TbUser as AboutMeIcon } from 'react-icons/tb';
+import { MdWorkOutline as ProjectsIcon } from 'react-icons/md';
+import { LiaToolsSolid as CapabilitiesIcon } from 'react-icons/lia';
+import { BiMessageSquareDetail as ContactIcon } from 'react-icons/bi';
 
 export const menuItems = [
   {
