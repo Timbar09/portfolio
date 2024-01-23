@@ -10,7 +10,11 @@ export const ThemeContext = createContext(null);
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const [theme, setTheme] = useLocalStorage('theme', 'dark');
+  const preference = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const [theme, setTheme] = useLocalStorage(
+    'theme',
+    preference ? 'light' : 'dark'
+  );
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
