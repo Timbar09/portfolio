@@ -55,15 +55,9 @@ const ThemeToggle = ({ isNavExpanded }) => {
           onClick={toggleTheme}
         >
           {theme === 'dark' ? (
-            <LightModeIcon
-              onClick={toggleTheme}
-              className={theme === 'dark' && 'spin'}
-            />
+            <LightModeIcon className={theme === 'dark' && 'spin'} />
           ) : (
-            <DarkModeIcon
-              onClick={toggleTheme}
-              className={theme === 'light' && 'spin'}
-            />
+            <DarkModeIcon className={theme === 'light' && 'spin'} />
           )}
         </button>
       )}
