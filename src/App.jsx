@@ -1,5 +1,6 @@
 import { useState, createContext } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
 
 import Nav from './components/Nav';
 import HamburgerButton from './components/Nav/HamburgerButton';
@@ -9,7 +10,7 @@ export const ThemeContext = createContext(null);
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useLocalStorage('theme', 'dark');
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
