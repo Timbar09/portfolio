@@ -12,7 +12,7 @@ const App = () => {
   const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
   const toggleMenu = () => {
