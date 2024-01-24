@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+@function rem($size) {
+  // if $size doesn't have a unit, throw an error
+  @if unitless($size) {
+    @error "Please provide a unit for the rem() function. Like so: #{$size}px";
+  }
+  @return math.div($size, 16px) * 1rem;
+}

@@ -1,0 +1,179 @@
+// APPEAR AND DISAPPEAR
+@keyframes appear {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+// SLIDE IN AND OUT
+@keyframes slide-in {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    right: -5rem;
+  }
+
+  1% {
+    opacity: 0;
+    right: -5rem;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    left: -5rem;
+  }
+
+  1% {
+    opacity: 0;
+    left: -5rem;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0;
+    right: -5rem;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    right: -5rem;
+  }
+}
+
+@keyframes slide-out-left {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0;
+    left: -5rem;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    left: -5rem;
+  }
+}
+
+// SPIN RIGHT AND LEFT
+@keyframes spin-1-right {
+  0% {
+    rotate: 90deg;
+  }
+
+  100% {
+    rotate: 0;
+  }
+}
+
+@keyframes spin-1-left {
+  0% {
+    rotate: -90deg;
+  }
+
+  100% {
+    rotate: 0;
+  }
+}
+
+@keyframes spin-2-left {
+  0% {
+    rotate: 0;
+    translate: 2.5rem 0;
+  }
+
+  100% {
+    rotate: -360deg;
+    translate: 0 0;
+  }
+}
+
+@keyframes spin-2-right {
+  0% {
+    rotate: 0;
+    translate: 0 0;
+  }
+
+  100% {
+    rotate: 360deg;
+    translate: -2.5rem 0;
+  }
+}
+
+// MOVE LEFT AND RIGHT
+@keyframes move-left {
+  0% {
+    translate: 2.5rem 0;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes move-right {
+  0% {
+    translate: 0 0;
+  }
+
+  100% {
+    translate: 2.5rem 0;
+  }
+}

@@ -1,0 +1,47 @@
+@use '../util/' as *;
+
+h1,
+h2,
+h3 {
+  font-family: $ff-title;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  max-width: 7rem;
+
+  @include breakpoint-down('sm') {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    z-index: 1000;
+  }
+}
