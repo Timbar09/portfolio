@@ -34,8 +34,6 @@ ul {
 }
 
 header {
-  max-width: 7rem;
-
   @include breakpoint-down('sm') {
     position: fixed;
     top: 0;
