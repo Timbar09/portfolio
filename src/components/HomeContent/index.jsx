@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const HomeContent = () => {
   return (
     <div className="home">
       <ul className="home__links">
@@ -16,10 +16,10 @@ const Home = () => {
           <Link to="/about">About Me Page</Link>
         </li>
         <li className="home__links--item">
-          <Link to="/projects">Projects Page</Link>
+          <Link to="/resume">Resume Page</Link>
         </li>
         <li className="home__links--item">
-          <Link to="/capabilities">Capabilities Page</Link>
+          <Link to="/abilities">Abilities Page</Link>
         </li>
         <li className="home__links--item">
           <Link to="/contact">Contact Page</Link>
@@ -29,4 +29,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeContent;

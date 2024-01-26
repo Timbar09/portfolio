@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
-import Home from './components/Home';
+import Home from './routes/Home';
+import About from './routes/About';
+import Resume from './routes/Resume';
+import Abilities from './routes/Abilities';
+import Contact from './routes/Contact';
 import ErrorPage from './routes/ErrorPage';
 
 import './assets/stylesheets/index.scss';
@@ -20,71 +24,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: (
-          <div>
-            <h1>About page</h1>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              labore quia a sapiente rerum facere consectetur fugiat harum
-              architecto magni perferendis doloribus voluptatibus ullam aliquid,
-              doloremque eligendi, corporis corrupti numquam minima laboriosam,
-              voluptas fugit. Non ullam exercitationem ipsum at iste minus.
-              Numquam, illum quaerat eligendi qui officiis laboriosam vero
-              ducimus?
-            </p>
-          </div>
-        ),
+        element: <About />,
       },
       {
-        path: '/projects',
-        element: (
-          <div>
-            <h1>Projects page</h1>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              labore quia a sapiente rerum facere consectetur fugiat harum
-              architecto magni perferendis doloribus voluptatibus ullam aliquid,
-              doloremque eligendi, corporis corrupti numquam minima laboriosam,
-              voluptas fugit. Non ullam exercitationem ipsum at iste minus.
-              Numquam, illum quaerat eligendi qui officiis laboriosam vero
-              ducimus?
-            </p>
-          </div>
-        ),
+        path: '/resume',
+        element: <Resume />,
       },
       {
-        path: '/capabilities',
-        element: (
-          <div>
-            <h1>Capabilities page</h1>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              labore quia a sapiente rerum facere consectetur fugiat harum
-              architecto magni perferendis doloribus voluptatibus ullam aliquid,
-              doloremque eligendi, corporis corrupti numquam minima laboriosam,
-              voluptas fugit. Non ullam exercitationem ipsum at iste minus.
-              Numquam, illum quaerat eligendi qui officiis laboriosam vero
-              ducimus?
-            </p>
-          </div>
-        ),
+        path: '/abilities',
+        element: <Abilities />,
       },
       {
         path: '/contact',
-        element: (
-          <div>
-            <h1>Contact page</h1>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              labore quia a sapiente rerum facere consectetur fugiat harum
-              architecto magni perferendis doloribus voluptatibus ullam aliquid,
-              doloremque eligendi, corporis corrupti numquam minima laboriosam,
-              voluptas fugit. Non ullam exercitationem ipsum at iste minus.
-              Numquam, illum quaerat eligendi qui officiis laboriosam vero
-              ducimus?
-            </p>
-          </div>
-        ),
+        element: <Contact />,
       },
     ],
   },

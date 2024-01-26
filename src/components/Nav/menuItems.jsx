@@ -1,7 +1,7 @@
 import { TbSmartHome as HomeIcon } from 'react-icons/tb';
 import { TbUser as AboutMeIcon } from 'react-icons/tb';
-import { MdWorkOutline as ProjectsIcon } from 'react-icons/md';
-import { LiaToolsSolid as CapabilitiesIcon } from 'react-icons/lia';
+import { MdWorkOutline as ResumeIcon } from 'react-icons/md';
+import { LiaToolsSolid as AbilitiesIcon } from 'react-icons/lia';
 import { MdOutlineEmail as ContactIcon } from 'react-icons/md';
 
 export const menuItems = [
@@ -19,15 +19,15 @@ export const menuItems = [
   },
   {
     id: 3,
-    icon: <ProjectsIcon />,
-    name: 'Projects',
-    url: '/projects',
+    icon: <ResumeIcon />,
+    name: 'Resume',
+    url: '/resume',
   },
   {
     id: 4,
-    icon: <CapabilitiesIcon />,
+    icon: <AbilitiesIcon />,
     name: 'Abilities',
-    url: '/capabilities',
+    url: '/abilities',
   },
   {
     id: 5,
