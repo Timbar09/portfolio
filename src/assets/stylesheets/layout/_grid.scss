@@ -9,6 +9,32 @@
     }
   }
 
+  &-gap {
+    &-0 {
+      grid-gap: 0;
+    }
+
+    &-1 {
+      grid-gap: 1rem;
+    }
+
+    &-2 {
+      grid-gap: 2rem;
+    }
+
+    &-3 {
+      grid-gap: 3rem;
+    }
+
+    &-4 {
+      grid-gap: 4rem;
+    }
+
+    &-5 {
+      grid-gap: 5rem;
+    }
+  }
+
   // Breakpoints
   &_sm {
     @include breakpoint-up('md') {
@@ -19,6 +45,44 @@
       &-c {
         @include breakpoint-up('md') {
           place-items: center;
+        }
+      }
+    }
+
+    &-gap {
+      &-0 {
+        @include breakpoint-up('md') {
+          grid-gap: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up('md') {
+          grid-gap: 1rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up('md') {
+          grid-gap: 2rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up('md') {
+          grid-gap: 3rem;
+        }
+      }
+
+      &-4 {
+        @include breakpoint-up('md') {
+          grid-gap: 4rem;
+        }
+      }
+
+      &-5 {
+        @include breakpoint-up('md') {
+          grid-gap: 5rem;
         }
       }
     }

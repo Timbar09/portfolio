@@ -1,0 +1,82 @@
+@use '../../assets/stylesheets/util/' as *;
+
+.home {
+  height: 100%;
+
+  &__list {
+    height: 100%;
+
+    // sm viewport
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      'intro intro'
+      'intro intro'
+      'contact theme'
+      'resume resume'
+      'resume resume'
+      'abilities about';
+
+    // md viewport
+    @include breakpoint-up('md') {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-areas:
+        'intro intro intro'
+        'intro intro intro'
+        'resume resume theme'
+        'resume resume abilities'
+        'about contact abilities';
+    }
+
+    // lg viewport
+    @include breakpoint-up('lg') {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas:
+        'contact intro intro intro'
+        'contact intro intro intro'
+        'theme abilities resume resume'
+        'about abilities resume resume';
+    }
+  }
+
+  &__list--item {
+    border: solid 1px red;
+    border-radius: 0.25rem;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__intro {
+    grid-area: intro;
+  }
+
+  &__theme {
+    grid-area: theme;
+  }
+
+  &__resume {
+    grid-area: resume;
+  }
+
+  &__abilities {
+    grid-area: abilities;
+  }
+
+  &__about {
+    grid-area: about;
+  }
+
+  &__contact {
+    grid-area: contact;
+  }
+
+  &__social {
+    grid-area: social;
+  }
+}

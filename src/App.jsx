@@ -52,7 +52,9 @@ const App = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className="app flex gap-2 px-2">
+      <div
+        className={`app flex ${location.pathname == '/' ? '' : 'gap-2'} px-2`}
+      >
         <header className="p-2 p_md-0 grid_sm grid_sm-pi-c">
           {location.pathname !== '/' && (
             <>
