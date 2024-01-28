@@ -55,6 +55,7 @@ const Nav = ({ handleMenuToggle, isMenuOpen }) => {
         <SocialList
           className="social-lg flex flex-jc-c gap-2"
           isNavExpanded={isNavExpanded}
+          isMenuOpen={isMenuOpen}
         />
       </div>
 

@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
 
@@ -44,10 +44,16 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    const body = document.querySelector('body');
+
+    body.dataset.theme = theme;
+  }, [theme]);
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className="app flex" data-theme={theme}>
-        <header className="p-2 grid_sm grid_sm-pi-c">
+      <div className="app flex gap-2 px-2">
+        <header className="p-2 p_md-0 grid_sm grid_sm-pi-c">
           {location.pathname !== '/' && (
             <>
               <HamburgerButton

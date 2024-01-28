@@ -31,14 +31,14 @@ const socialsData = [
   },
 ];
 
-const SocialList = ({ className = '', isNavExpanded }) => {
+const SocialList = ({ className = '', isNavExpanded, isMenuOpen }) => {
   const isMobile = useMediaQuery('sm', 'down');
   const [showFullList, setShowFullList] = useState(false);
 
   useEffect(() => {
     let timeoutId;
 
-    if (isNavExpanded || isMobile) {
+    if (isNavExpanded || (isMobile && isMenuOpen)) {
       timeoutId = setTimeout(() => {
         setShowFullList(true);
       }, 200);
@@ -49,7 +49,7 @@ const SocialList = ({ className = '', isNavExpanded }) => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [isNavExpanded, isMobile]);
+  }, [isNavExpanded, isMobile, isMenuOpen]);
 
   return (
     <ul className={`social__list ${className} ${isNavExpanded && 'px-1'}`}>
@@ -97,6 +97,7 @@ const SocialList = ({ className = '', isNavExpanded }) => {
 SocialList.propTypes = {
   className: PropTypes.string,
   isNavExpanded: PropTypes.bool,
+  isMenuOpen: PropTypes.bool,
 };
 
 export default SocialList;
