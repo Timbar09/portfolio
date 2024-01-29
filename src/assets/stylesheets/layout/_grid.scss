@@ -15,23 +15,15 @@
     }
 
     &-1 {
-      grid-gap: 1rem;
+      grid-gap: 0.5rem;
     }
 
     &-2 {
-      grid-gap: 2rem;
+      grid-gap: 1rem;
     }
 
     &-3 {
-      grid-gap: 3rem;
-    }
-
-    &-4 {
-      grid-gap: 4rem;
-    }
-
-    &-5 {
-      grid-gap: 5rem;
+      grid-gap: 1.75rem;
     }
   }
 
@@ -58,31 +50,19 @@
 
       &-1 {
         @include breakpoint-up('md') {
-          grid-gap: 1rem;
+          grid-gap: 0.5rem;
         }
       }
 
       &-2 {
         @include breakpoint-up('md') {
-          grid-gap: 2rem;
+          grid-gap: 1rem;
         }
       }
 
       &-3 {
         @include breakpoint-up('md') {
-          grid-gap: 3rem;
-        }
-      }
-
-      &-4 {
-        @include breakpoint-up('md') {
-          grid-gap: 4rem;
-        }
-      }
-
-      &-5 {
-        @include breakpoint-up('md') {
-          grid-gap: 5rem;
+          grid-gap: 1.75rem;
         }
       }
     }
