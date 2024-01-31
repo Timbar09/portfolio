@@ -4,8 +4,8 @@ import './index.scss';
 
 const HomeContent = () => {
   return (
-    <div className="home">
-      <ul className="home__list grid">
+    <div className="home p-1">
+      <ul className="home__list grid grid-gap-1">
         <li className="home__intro home__list--item">
           <span className="p-2">
             <h1>Miles Mosweu</h1>

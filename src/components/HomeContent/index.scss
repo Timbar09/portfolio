@@ -5,7 +5,8 @@
 
   &__list {
     height: 100%;
-    // position: relative;
+    border-radius: 0.25rem;
+    overflow: hidden;
 
     // sm viewport
     grid-template-columns: repeat(2, 1fr);
@@ -40,32 +41,23 @@
         'theme abilities resume resume'
         'about abilities resume resume';
     }
-  }
 
-  &__list--item {
-    position: relative;
-    background-color: var(--bg-200);
-    border-radius: 0.25rem;
-
-    a,
-    span {
+    &--item {
       position: relative;
-      display: block;
-      width: 100%;
-      height: 100%;
+      background-color: var(--bg-200);
+      // border-radius: 0.25rem;
+      transition: padding 150ms ease-in-out;
 
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-color: var(--primary-100);
-        opacity: 0.75;
-        transition: opacity 100ms ease-in-out, visibility 0ms 100ms ease-in-out;
-      }
+      a,
+      span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
 
-      &:hover::before {
-        opacity: 0;
-        visibility: hidden;
+        &:hover {
+          background-color: var(--bg-300);
+        }
       }
     }
   }
