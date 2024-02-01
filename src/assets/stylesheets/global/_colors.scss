@@ -34,4 +34,14 @@
   --bg-200: #f5f5f5;
   --bg-300: #e0e0e0;
   --opaque-100: rgba(0, 0, 0, 0.2);
+
+  .home__list--item a,
+  .home__list--item span {
+    --bg-opaque: rgba(245, 245, 245, 0.85);
+    backdrop-filter: blur(1rem);
+
+    &:hover {
+      --bg-opaque: rgba(245, 245, 245, 0.95);
+    }
+  }
 }

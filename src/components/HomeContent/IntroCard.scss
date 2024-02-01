@@ -1,0 +1,19 @@
+.home__intro {
+  &--name {
+    font-size: 1.25rem;
+
+    span {
+      display: inline;
+
+      &:last-child {
+        color: var(--primary-100);
+      }
+    }
+  }
+
+  &--title {
+    font-size: 4.5rem;
+    font-weight: 300;
+    margin-top: 0.25rem;
+  }
+}
