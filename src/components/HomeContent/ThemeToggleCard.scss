@@ -1,5 +1,13 @@
 @use '../../assets/stylesheets/util/' as *;
 
+.home__theme {
+  grid-area: theme;
+
+  span {
+    display: grid !important;
+  }
+}
+
 .theme-switch {
   --toggle-size: 30px;
   --container-width: 5.625em;
