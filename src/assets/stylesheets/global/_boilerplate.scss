@@ -17,7 +17,7 @@ body {
   padding: 0;
   font-size: clamp(0.875rem, 2vw, 1.15rem);
   color: var(--text-300);
-  background: linear-gradient(180deg, var(--bg-200) 0%, var(--bg-200) 100%);
+  background-color: var(--bg-100);
 
   .app {
     height: clamp(41.25rem, 100vh, 900px);
@@ -26,6 +26,5 @@ body {
     margin-inline: auto;
     border-left: 1px solid var(--bg-300);
     border-right: 1px solid var(--bg-300);
-    background-color: var(--bg-100);
   }
 }

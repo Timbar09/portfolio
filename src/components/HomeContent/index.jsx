@@ -9,7 +9,7 @@ import './index.scss';
 
 const HomeContent = () => {
   return (
-    <div className="home p-1">
+    <div className="home p-2">
       <ul className="home__list grid grid-gap-1">
         <IntroCard />
 
