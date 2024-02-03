@@ -47,8 +47,8 @@
     &--item {
       position: relative;
 
-      a,
-      span {
+      > a,
+      > span {
         --bg-opaque: hsla(215, 50%, 9%, 0.85);
 
         position: relative;

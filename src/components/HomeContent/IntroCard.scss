@@ -1,19 +1,29 @@
+@use '../../assets/stylesheets/util/' as *;
+
 .home__intro {
-  &--name {
-    font-size: 1.25rem;
+  &--title {
+    font-size: clamp(1.15rem, 3vw, 2.5rem);
 
-    span {
-      display: inline;
+    &__name {
+      font-size: 0.75em;
+      font-weight: 200;
 
-      &:last-child {
+      .about-link {
         color: var(--primary-100);
+        transition: opacity 100ms ease-in-out;
+
+        &:hover {
+          opacity: 0.85;
+          text-decoration: underline;
+        }
       }
     }
-  }
 
-  &--title {
-    font-size: 4.5rem;
-    font-weight: 300;
-    margin-top: 0.25rem;
+    &__description {
+      display: block;
+      font-size: 2em;
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
   }
 }
