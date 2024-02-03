@@ -1,0 +1,80 @@
+.nav__theme {
+  --width-dimension: 4rem;
+
+  position: relative;
+  font-size: 2rem;
+  color: inherit;
+
+  &-minimized {
+    transition: color 150ms ease-in-out;
+
+    &.slide-in {
+      animation: slide-in-left 200ms ease-in-out forwards;
+    }
+
+    &.slide-out {
+      animation: slide-out-left 200ms ease-in-out forwards;
+    }
+
+    &:hover {
+      color: var(--primary-100);
+    }
+
+    .spin {
+      animation: spin-1-right 500ms ease-in-out;
+    }
+  }
+
+  &-animate {
+    --toggle-bg: rgba(255, 255, 255, 0.2);
+
+    margin: 6px 0;
+    padding: 0.15rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+    // border: 0.15rem solid var(--toggle-bg);
+    background-color: var(--toggle-bg);
+    transition: box-shadow 150ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 10px var(--opaque-100);
+    }
+
+    &.slide-in {
+      animation: slide-in 150ms ease-in-out forwards;
+    }
+
+    .darkmode,
+    .lightmode {
+      width: var(--width-dimension);
+      border-radius: inherit;
+      color: var(--bg-100);
+      padding: 0.25rem 0;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0.15rem auto 0.15rem 0.15rem;
+      width: var(--width-dimension);
+      border-radius: 0.15rem;
+      color: var(--bg-300);
+      background-color: var(--text-100);
+      font-weight: 700;
+      gap: 0.25rem;
+      box-shadow: 0 0 10px var(--opaque-100);
+      transition: left 150ms ease-in-out;
+
+      &:hover {
+        background-color: var(--text-300);
+      }
+
+      &-lightmode {
+        left: calc(var(--width-dimension) + 0.15rem);
+      }
+
+      svg {
+        font-size: 1.15rem;
+      }
+    }
+  }
+}

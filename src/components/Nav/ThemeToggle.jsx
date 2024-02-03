@@ -6,6 +6,8 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { MdOutlineLightMode as LightModeIcon } from 'react-icons/md';
 import { MdOutlineDarkMode as DarkModeIcon } from 'react-icons/md';
 
+import './ThemeToggle.scss';
+
 const ThemeToggle = ({ isNavExpanded }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const isMobile = useMediaQuery('sm', 'down');

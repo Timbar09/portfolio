@@ -1,6 +1,7 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
+import useLocalStorage from 'use-local-storage';
 
 import NavLinkItem from './NavLinkItem';
 import NavMenuItem from './NavMenuItem';
@@ -13,7 +14,10 @@ import { menuItems } from './menuItems';
 import './index.scss';
 
 const Nav = ({ handleMenuToggle, isMenuOpen }) => {
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [isNavExpanded, setIsNavExpanded] = useLocalStorage(
+    'isNavExpanded',
+    false
+  );
   const menuRef = useRef();
   const isMobile = useMediaQuery('sm', 'down');
 
