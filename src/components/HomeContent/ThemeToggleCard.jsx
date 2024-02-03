@@ -21,7 +21,7 @@ const ThemeToggleCard = () => {
             className="theme-switch__container"
             tabIndex="0"
             role="button"
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
                 toggleTheme();

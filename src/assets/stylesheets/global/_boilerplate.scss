@@ -21,8 +21,7 @@ body {
 
   .app {
     height: clamp(41.25rem, 100vh, 900px);
-    width: 100%;
-    max-width: 70em;
+    width: clamp(25.625rem, 100%, 70em);
     margin-inline: auto;
     border-left: 1px solid var(--bg-300);
     border-right: 1px solid var(--bg-300);

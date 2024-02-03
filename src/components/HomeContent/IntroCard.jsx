@@ -5,7 +5,7 @@ import './IntroCard.scss';
 const IntroCard = () => {
   return (
     <li className="home__intro home__list--item">
-      <span className="p-2">
+      <span className="p-1 p_md-2">
         <h1 className="home__intro--title">
           <span className="home__intro--title__name">
             <span>Hi👋, I&apos;m</span>{' '}

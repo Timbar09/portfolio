@@ -1,6 +1,16 @@
 @use '../../assets/stylesheets/util/' as *;
 
 .home__intro {
+  grid-area: intro;
+
+  span {
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    @include breakpoint-up('lg') {
+      border-radius: 0 0.5rem 0 0;
+    }
+  }
+
   &--title {
     font-size: clamp(1.15rem, 3vw, 2.5rem);
 

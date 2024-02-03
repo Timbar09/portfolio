@@ -6,8 +6,6 @@
 
   &__list {
     height: 100%;
-    border-radius: 0.25rem;
-    overflow: hidden;
 
     // sm viewport
     grid-template-columns: repeat(2, 1fr);
@@ -18,7 +16,7 @@
       'contact theme'
       'resume resume'
       'resume resume'
-      'abilities about';
+      'about abilities';
 
     // md viewport
     @include breakpoint-up('md') {
@@ -39,8 +37,8 @@
       grid-template-areas:
         'contact intro intro intro'
         'contact intro intro intro'
-        'theme abilities resume resume'
-        'about abilities resume resume';
+        'resume resume abilities theme'
+        'resume resume abilities about';
     }
 
     &--item {
@@ -54,35 +52,68 @@
         display: block;
         width: 100%;
         height: 100%;
+        border: 0.05rem solid var(--bg-opaque);
         background-color: var(--bg-opaque);
         backdrop-filter: blur(0.5rem);
-        transition: padding 150ms ease-in-out;
+        transition: scale 150ms ease-in-out;
 
         &:hover {
           --bg-opaque: hsla(215, 50%, 9%, 0.95);
+
+          border: 0.05rem solid var(--bg-300);
+        }
+      }
+
+      > a {
+        &:active {
+          scale: 0.975;
         }
       }
     }
   }
 
-  &__intro {
-    grid-area: intro;
-  }
-
   &__resume {
     grid-area: resume;
+
+    a {
+      @include breakpoint-up('lg') {
+        border-radius: 0 0 0 0.5rem;
+      }
+    }
   }
 
   &__abilities {
     grid-area: abilities;
+
+    a {
+      border-radius: 0 0 0.5rem 0;
+
+      @include breakpoint-up('lg') {
+        border-radius: 0;
+      }
+    }
   }
 
   &__about {
     grid-area: about;
+
+    a {
+      border-radius: 0 0 0 0.5rem;
+
+      @include breakpoint-up('lg') {
+        border-radius: 0 0 0.5rem 0;
+      }
+    }
   }
 
   &__contact {
     grid-area: contact;
+
+    a {
+      @include breakpoint-up('lg') {
+        border-radius: 0.5rem 0 0;
+      }
+    }
   }
 
   &__social {
