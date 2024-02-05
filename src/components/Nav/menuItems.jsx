@@ -1,6 +1,6 @@
 import { TbSmartHome as HomeIcon } from 'react-icons/tb';
 import { TbUser as AboutMeIcon } from 'react-icons/tb';
-import { MdWorkOutline as ResumeIcon } from 'react-icons/md';
+import { MdWorkOutline as PortfolioIcon } from 'react-icons/md';
 import { LiaToolsSolid as AbilitiesIcon } from 'react-icons/lia';
 import { MdOutlineEmail as ContactIcon } from 'react-icons/md';
 
@@ -19,9 +19,9 @@ export const menuItems = [
   },
   {
     id: 3,
-    icon: <ResumeIcon />,
-    name: 'Resume',
-    url: '/resume',
+    icon: <PortfolioIcon />,
+    name: 'Portfolio',
+    url: '/portfolio',
   },
   {
     id: 4,

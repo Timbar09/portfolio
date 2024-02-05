@@ -14,8 +14,8 @@
       'intro intro'
       'intro intro'
       'contact theme'
-      'resume resume'
-      'resume resume'
+      'portfolio portfolio'
+      'portfolio portfolio'
       'about abilities';
 
     // md viewport
@@ -25,8 +25,8 @@
       grid-template-areas:
         'intro intro intro'
         'intro intro intro'
-        'resume resume theme'
-        'resume resume abilities'
+        'portfolio portfolio theme'
+        'portfolio portfolio abilities'
         'about contact abilities';
     }
 
@@ -37,8 +37,8 @@
       grid-template-areas:
         'contact intro intro intro'
         'contact intro intro intro'
-        'resume resume abilities theme'
-        'resume resume abilities about';
+        'portfolio portfolio abilities theme'
+        'portfolio portfolio abilities about';
     }
 
     &--item {
@@ -72,8 +72,8 @@
     }
   }
 
-  &__resume {
-    grid-area: resume;
+  &__portfolio {
+    grid-area: portfolio;
 
     a {
       @include breakpoint-up('lg') {

@@ -1,7 +1,7 @@
 import IntroCard from './IntroCard';
 import ThemeToggleCard from './ThemeToggleCard';
 import AboutCard from './AboutCard';
-import ResumeCard from './ResumeCard';
+import PortfolioCard from './PortfolioCard';
 import AbilitiesCard from './AbilitiesCard';
 import Contact from './Contact';
 
@@ -17,7 +17,7 @@ const HomeContent = () => {
 
         <AboutCard />
 
-        <ResumeCard />
+        <PortfolioCard />
 
         <AbilitiesCard />
 
