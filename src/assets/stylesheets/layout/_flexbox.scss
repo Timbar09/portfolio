@@ -1,5 +1,5 @@
 .flex {
-  display: flex;
+  display: flex !important;
 
   &-jc {
     &-sb {
@@ -23,7 +23,6 @@
   &-col {
     flex-direction: column;
   }
-
 }
 
 .gap {
