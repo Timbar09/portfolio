@@ -9,6 +9,7 @@
 
       &--icon {
         color: var(--text-200);
+        animation: swing 3000ms 200ms infinite ease;
 
         &__wrap::before {
           left: 0;
@@ -39,6 +40,8 @@
     height: var(--dimension);
     border-radius: 50%;
     background-color: var(--opaque-100);
+    rotate: y -45deg;
+    perspective: 1000px;
     transition: color 300ms ease-in-out;
 
     @include breakpoint-up(lg) {
@@ -92,9 +95,9 @@
     }
   }
 
-  @keyframes rotate {
+  @keyframes swing {
     100% {
-      rotate: y 360deg;
+      rotate: y 45deg;
     }
   }
 }
