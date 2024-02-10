@@ -6,6 +6,7 @@
 
   &__list {
     height: 100%;
+    grid-gap: 0.25rem;
 
     // sm viewport
     grid-template-columns: repeat(2, 1fr);
